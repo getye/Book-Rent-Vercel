@@ -13,7 +13,7 @@ export const RenterRents = () => {
       const token = localStorage.getItem('token'); // Retrieve the token from localStorage
   
       try {
-        const response = await fetch(`${window.location.origin}/renter/rents`, {
+        const response = await fetch(`${window.location.origin}/renter/view/rents`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

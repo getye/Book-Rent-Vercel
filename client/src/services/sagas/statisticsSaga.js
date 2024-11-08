@@ -24,7 +24,7 @@ import {
 
 function* fetchCounts() {
   try {
-    const response = yield call(axios.get, `${window.location.origin}/admin/dashboard`);
+    const response = yield call(axios.get, `${window.location.origin}/admin/view/dashboard`);
     yield put(fetchCountsSuccess(response.data));
   } catch (error) {
     yield put(fetchCountsFailure(error.message));

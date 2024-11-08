@@ -11,7 +11,7 @@ import {
 
 function* renterFetchBooks() {
   try {
-    const response = yield call(fetch, `${window.location.origin}/renter/books`);
+    const response = yield call(fetch, `${window.location.origin}/renter/view/books`);
     const data = yield response.json();
     if (response.ok) {
       yield put(fetchBooksSuccess(data));
@@ -49,7 +49,7 @@ function* adminFetchBooks() {
   try {
     const token = localStorage.getItem('token'); // Retrieve the token from localStorage
     
-    const response = yield call(fetch, `${window.location.origin}/admin/books`, {
+    const response = yield call(fetch, `${window.location.origin}/admin/view/books`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`, // Include token in header

@@ -8,7 +8,7 @@ import {
 
 function* fetchUsers() {
   try {
-    const response = yield call(fetch, `${window.location.origin}/admin/users`);
+    const response = yield call(fetch, `${window.location.origin}/admin/view/users`);
     const data = yield response.json();
 
     if (!Array.isArray(data)) {
@@ -26,7 +26,7 @@ function* updateUserStatus(action) {
     try {
       const { userId, newStatus } = action.payload;
       // Make API call to update user status
-      const response = yield call(fetch, `${window.location.origin}/admin/users/${userId}/status`, {
+      const response = yield call(fetch, `${window.location.origin}/admin/view/users/${userId}/status`, {
         method: 'PUT',
         body: JSON.stringify({ status: newStatus }),
         headers: {

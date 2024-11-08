@@ -5,7 +5,7 @@ const protect = require('../middleware/auth');
 const StatisticsController = require('../controllers/statisticsController'); // Import the controller
 
 // Define the route for statistics
-statisticsRouter.get('/admin/dashboard', StatisticsController.rentStatistics);
+statisticsRouter.get('/admin/view/dashboard', StatisticsController.rentStatistics);
 statisticsRouter.get('/admin/dashboard/book-types', StatisticsController.getBookTypesStatistics);
 statisticsRouter.get('/admin/dashboard/earnings', StatisticsController.getEarningsByCategory);
 statisticsRouter.get('/admin/dashboard/monthly-earnings', StatisticsController.getEarnings);

@@ -22,11 +22,11 @@ var upload = multer({ storage });
 
 // Routes
 bookRouter.post('/owner/book/upload', protect, upload.single("cover"), BookController.uploadBook);
-bookRouter.get('/admin/books', BookController.getBooks);
-bookRouter.get('/admin/approve/books', BookController.getBooks);
+bookRouter.get('/admin/view/books', BookController.getBooks);
+bookRouter.get('/admin/approve/book', BookController.getBooks);
 bookRouter.put('/admin/approve/book/accept/:book_id', BookController.acceptBook);
 bookRouter.put('/admin/approve/book/reject/:book_id', BookController.rejectBook);
-bookRouter.get('/renter/books', BookController.getBooks);
+bookRouter.get('/renter/view/books', BookController.getBooks);
 bookRouter.get('/admin/approve/rents', BookController.getNewRent);
 bookRouter.put('/admin/approve/rent/accept', BookController.acceptRent);
 bookRouter.put('/admin/approve/rent/reject', BookController.rejectRent);

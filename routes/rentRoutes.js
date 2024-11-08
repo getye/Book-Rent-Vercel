@@ -8,7 +8,7 @@ const renterRouter = express.Router();
 renterRouter.post('/renter/book/rent',authenticateJWT, createRent);
 
 // Route for fetching rent details by id
-renterRouter.get('/renter/rents', authenticateJWT, getRentById);
+renterRouter.get('/renter/view/rents', authenticateJWT, getRentById);
 
 //renterRouter.get('/renter/dashboard', authenticateJWT, getRentById);
 
