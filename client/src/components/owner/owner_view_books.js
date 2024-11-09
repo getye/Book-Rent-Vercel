@@ -107,6 +107,7 @@ export const OwnerViewBooks = () => {
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.price}</TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.catagory}</TableCell>
                   { console.log(book.book_cover)}
+                  { console.log(process.env.REACT_APP_CLOUDINARY_CLOUD_NAME)}
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
                 <img
                     src={book.book_cover}
