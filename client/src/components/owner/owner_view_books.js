@@ -1,8 +1,7 @@
-import { Table, TableHead, TableRow, TableCell, TableBody, Box, Paper, IconButton, InputBase, Typography } from '@mui/material';
-import { useState, useEffect } from 'react';
-import SearchIcon from '@mui/icons-material/Search';
-import { ownerFetchBooksRequest, setSearchTerm } from '../../services/actions/bookActions';
+import React, { useState, useEffect } from 'react';
+import {MaterialReactTable} from 'material-react-table';
 import { useDispatch, useSelector } from 'react-redux';
+import { ownerFetchBooksRequest } from '../../services/actions/bookActions';
 
 export const OwnerViewBooks = () => {
     const dispatch = useDispatch();
@@ -15,119 +14,55 @@ export const OwnerViewBooks = () => {
     }, [dispatch]);
 
     const handleSearch = (event) => {
-      setSearch(event.target.value);
-      dispatch(setSearchTerm(event.target.value));       
-      };
+      setSearch(event.target.value);   
+    };
 
-        // Filter books based on the search query
-      const filteredBooks = books.filter(book => 
-        book.author.toLowerCase().includes(search.toLowerCase()) || 
-        book.book_title.toLowerCase().includes(search.toLowerCase()) ||
-        book.book_status.toLowerCase().includes(search.toLowerCase()) ||  
-        book.catagory.toLowerCase().includes(search.toLowerCase())
-        );
+    const filteredBooks = books.filter(book => 
+      book.author.toLowerCase().includes(search.toLowerCase()) || 
+      book.book_title.toLowerCase().includes(search.toLowerCase()) ||
+      book.book_status.toLowerCase().includes(search.toLowerCase()) ||  
+      book.catagory.toLowerCase().includes(search.toLowerCase())
+    );
+
     if (loading) return <div>Loading...</div>;
-    return ( 
-      <Box sx={{ paddingTop: "5%", marginLeft: "20%", justifyContent:'center' }}>
-        <Box sx={{ paddingTop:2}}>
-              <Paper 
-                sx={{ 
-                    display: 'flex', 
-                    width: "45%", 
-                    border: 1, 
-                    height:'1%',
-                    borderRadius: 4, 
-                    borderColor: 'blue', 
-                    mb: 1 }}>
-                  <IconButton sx={{ p: '6px', color:'blue' }} aria-label="search">
-                    <SearchIcon />
-                  </IconButton>
-                  <InputBase
-                      sx={{ ml: 1, flex: 1 }}
-                      size='small'
-                      placeholder="Search"
-                      value={search} // Bind the search query
-                      onChange={handleSearch} // Handle input changes
-                      />
-              </Paper>
-        </Box>
-        
-        { (books.length !== 0) ? (
-          <Table sx={{ maxWidth: 0.95, border: 'black'}}>
-          <TableHead sx={{alignContent:'center'}}>
-            <TableRow sx={{ bgcolor: 'blue'}}>
-              <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                No
-              </TableCell>
-              <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                Book Title
-              </TableCell>
-              <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                Author
-              </TableCell>
-              <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                Total Quantity
-              </TableCell>
-              <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                Rent Quantity
-              </TableCell>
-              <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                Available Books
-              </TableCell>
-              <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                Rent Price
-              </TableCell>
-              <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                Book Category
-              </TableCell>
-              <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                Book Cover
-              </TableCell>
-              <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                Status
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {filteredBooks?.map((book, index) => (
-              <TableRow
-                key={book.id}
-                sx={{
-                  alignItems: 'center',
-                  height: '40px',
-                  bgcolor: index % 2 === 0 ? '#E0E5E5' : '#EBF4FA',
-                }}
-              >
-                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{index + 1}</TableCell>
-                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.book_title}</TableCell>
-                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.author}</TableCell>
-                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.total_quantity}</TableCell>
-                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.rent_quantity}</TableCell>
-                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.total_quantity-book.rent_quantity}</TableCell>
-                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.price}</TableCell>
-                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.catagory}</TableCell>
-                  { console.log(book.book_cover)}
-                  { console.log(process.env.REACT_APP_CLOUDINARY_CLOUD_NAME)}
-                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
-                <img
-                    src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload/book/cover/${book.book_cover}`}
-                    alt="Book Cover"
-                    style={{ width: '20px', height: '25px' }}
-                  />
-                </TableCell>
-                <TableCell sx={{ padding: '0px', textAlign: 'center', color: 'white', bgcolor: book.book_status === "Pending" ? '#FFA500' : book.book_status === "Accepted" ? '#008000' : '#FF0000' }}>
-                  {book.book_status}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-          </Table>
-        ) : (
-          <>
-            <Typography>You have no rent</Typography>
-            {error && <Typography>{error}</Typography>}
-          </>
-        )}
-      </Box>
+    if (error) return <div>{error}</div>;
+
+    const columns = [
+      { header: 'No', accessorKey: 'no' },
+      { header: 'Book Title', accessorKey: 'book_title' },
+      { header: 'Author', accessorKey: 'author' },
+      { header: 'Total Quantity', accessorKey: 'total_quantity' },
+      { header: 'Rent Quantity', accessorKey: 'rent_quantity' },
+      { header: 'Available Books', accessorKey: 'available_books' },
+      { header: 'Rent Price', accessorKey: 'price' },
+      { header: 'Book Category', accessorKey: 'catagory' },
+      { header: 'Book Cover', accessorKey: 'book_cover' },
+      { header: 'Status', accessorKey: 'book_status' },
+    ];
+
+    return (
+      <div>
+        <input
+          type="text"
+          placeholder="Search"
+          value={search}
+          onChange={handleSearch}
+        />
+        <MaterialReactTable
+          columns={columns}
+          data={filteredBooks.map((book, index) => ({
+            no: index + 1,
+            book_title: book.book_title,
+            author: book.author,
+            total_quantity: book.total_quantity,
+            rent_quantity: book.rent_quantity,
+            available_books: book.total_quantity - book.rent_quantity,
+            price: book.price,
+            catagory: book.catagory,
+            book_cover: book.book_cover,
+            book_status: book.book_status,
+          }))}
+        />
+      </div>
     );
 };
