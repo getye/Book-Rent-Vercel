@@ -9,11 +9,6 @@ const signup = async (req, res) => {
   const { email, name, password, location, user_type } = req.body;
   const hashedpass = await bcrypt.hash(password, 10);
   const user_status = "Active"
-  console.log("Email:", email)
-  console.log("Name:", name)
-  console.log("Password:", password)
-  console.log("Location:", location)
-  console.log("User type:", user_type)
   
   try {
     await UserModel.createUser(id, email, name, hashedpass, location, user_type, user_status);

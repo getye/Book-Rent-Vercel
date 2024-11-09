@@ -13,7 +13,6 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 const usertypes = [
   { label: 'Renter', value: 'Renter' },
   { label: 'Owner', value: 'Owner' },
-  { label: 'Admin', value: 'Admin' },
 ];
 
 const signupSchema = z.object({
@@ -88,7 +87,6 @@ export const Signup = () => {
     try {
       // Validate the form values with Zod
       signupSchema.parse(formValues);
-      console.log("Submited data:", formValues)
       
       // If validation passes, proceed with the signup
       const response = await Axios.post(`${window.location.origin}/user/signup`, formValues);
