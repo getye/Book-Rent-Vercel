@@ -107,7 +107,7 @@ export const OwnerViewBooks = () => {
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.price}</TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.catagory}</TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
-                  <img src={`${window.location.origin}/book/cover/${book.book_cover}`} alt='Book Cover' style={{ width: '20px', height: '25px' }} />
+                  <img src={book.book_cover} alt='Book Cover' style={{ width: '20px', height: '25px' }} />
                 </TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center', color: 'white', bgcolor: book.book_status === "Pending" ? '#FFA500' : book.book_status === "Accepted" ? '#008000' : '#FF0000' }}>
                   {book.book_status}
