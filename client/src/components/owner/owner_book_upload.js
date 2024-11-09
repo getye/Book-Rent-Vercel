@@ -47,8 +47,9 @@ export const OwnerBookUpload = () => {
       console.log('No token found, please log in');
       return;
     }
-    console.log(formData.bookTitle)
-    console.log(formDataToSubmit)
+    for (let [key, value] of formDataToSubmit.entries()) {
+      console.log(`${key}: ${value}`);
+    }
     const response = await fetch(`${window.location.origin}/owner/book/upload`, {
       method: 'POST',
       headers: {
