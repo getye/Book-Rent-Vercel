@@ -26,8 +26,11 @@ const uploadBook = async (req, res) => {
 const getBooks = async (req, res) => {
     try {
         const books = await BookModel.getAllBooks();
-
-        res.json(books.rows);
+        const formattedBooks = books.rows.map(book => ({
+            ...book,
+            book_cover: path.basename(book.book_cover) // Only send the filename
+        }));
+        res.json(formattedBooks);
         //res.json(books.rows);
     } catch (err) {
         console.log(err);
