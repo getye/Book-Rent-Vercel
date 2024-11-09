@@ -28,8 +28,9 @@ const getBooks = async (req, res) => {
         const books = await BookModel.getAllBooks();
         const formattedBooks = books.rows.map(book => ({
             ...book,
-            book_cover: `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/${path.basename(book.book_cover)}`
+            book_cover: book.book_cover
         }));
+        console.log(formattedBooks)
         res.json(formattedBooks);
         //res.json(books.rows);
     } catch (err) {
