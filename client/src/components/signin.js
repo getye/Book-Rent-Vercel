@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Snackbar, Alert, Grid, Box, Typography, TextField, Button, Link, FormControlLabel, Checkbox } from '@mui/material';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 export const Signin = () => {
   const navigate = useNavigate();
@@ -54,12 +53,8 @@ export const Signin = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Box component={'form'} onSubmit={handleSubmit}>
       <Grid container sx={{ paddingTop: 10, width: '80%', paddingLeft: 35 }}>
-        <Grid item xs={6} sx={{ bgcolor: 'lightblue', height: 350, display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
-          <MenuBookIcon sx={{ width: 200, height: 200, mt: 7 }} />
-        </Grid>
-        <Grid item xs={6} sx={{ paddingLeft: 0 }}>
           <Box sx={{ paddingLeft: 6 }}>
             <Typography component="h1" variant="h5">
               Sign in
@@ -105,7 +100,6 @@ export const Signin = () => {
               </Typography>
             </Grid>
           </Box>
-        </Grid>
       </Grid>
 
       {/* Snackbar for notifications */}
@@ -126,6 +120,6 @@ export const Signin = () => {
           {notificationMessage}
         </Alert>
       </Snackbar>
-    </form>
+    </Box>
   );
 };

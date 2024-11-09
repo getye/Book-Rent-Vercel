@@ -6,7 +6,6 @@ import {
   FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Autocomplete, Divider,
   Link
 } from '@mui/material';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
@@ -118,12 +117,8 @@ export const Signup = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Box component={'form'} onSubmit={handleSubmit}>
       <Grid container sx={{ paddingTop: 10, width: '80%', paddingLeft: 35 }}>
-        <Grid item xs={6} sx={{ bgcolor: 'lightblue', height: 450, display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
-          <MenuBookIcon sx={{ width: 200, height: 200, mt: 8 }} />
-        </Grid>
-        <Grid item xs={6} sx={{ paddingLeft: 0 }}>
           <Box sx={{ paddingLeft: 6 }}>
             <Typography component="h1" variant="h5" sx={{ paddingBottom: 2 }}>
               Sign up
@@ -239,7 +234,6 @@ export const Signup = () => {
               Have an account? <Link href="/signin">Sign in</Link>
             </Typography>
           </Box>
-        </Grid>
       </Grid>
 
       <Snackbar
@@ -260,6 +254,6 @@ export const Signup = () => {
           {notificationMessage}
         </Alert>
       </Snackbar>
-    </form>
+    </Box>
   );
 };
