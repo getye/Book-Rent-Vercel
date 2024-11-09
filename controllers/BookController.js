@@ -7,13 +7,14 @@ const uploadBook = async (req, res) => {
     const BookOwner = req.user.userName; // Extract userName from the decoded JWT
     const rent_quantity = 0;
     const { title, author, price, quantity, catagory } = req.body;
-    const cover = req.file.filename; // Store only the filename
+    const cover = req.file; 
+    const picture = cover.path;
     const book_status = "Pending";
 
     try {
         await BookModel.uploadBook({
             BookID, BookOwner, title, author, price,
-            quantity, rent_quantity, catagory, cover, book_status 
+            quantity, rent_quantity, catagory, picture, book_status 
         });
         res.status(201).json({ message: 'Book uploaded successfully' });
     } catch (err) {
