@@ -3,7 +3,7 @@ const pool = require('../dbcon');
 const uploadBook = async (bookData) => {
     const {
         BookID, BookOwner, title, author, price,
-        quantity, rent_quantity, catagory, cover, book_status
+        quantity, rent_quantity, catagory, picture, book_status
     } = bookData;
 
     const query = `
@@ -14,7 +14,7 @@ const uploadBook = async (bookData) => {
         ) 
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
     `;
-    const values = [BookID, BookOwner, title, author, price, quantity, rent_quantity, catagory, cover, book_status];
+    const values = [BookID, BookOwner, title, author, price, quantity, rent_quantity, catagory, picture, book_status];
 
     return await pool.query(query, values);
 };
