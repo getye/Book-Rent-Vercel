@@ -13,7 +13,7 @@ app.use(express.json());
 app.use('/book', express.static(path.join(__dirname, 'book')));
 
 app.use(cors({
-  origin: 'http://localhost:3000', 
+  origin: `https://getye-book-rent.vercel.app/`, 
   credentials: true
 }));
 
