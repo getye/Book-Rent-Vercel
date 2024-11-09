@@ -108,7 +108,7 @@ export const OwnerViewBooks = () => {
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.catagory}</TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
                 <img
-                    src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload/book/cover/${book.book_cover}`}
+                    src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload/book/cover/1731141932409-619630384-Fikir Eske Mekaber`}
                     alt="Book Cover"
                     style={{ width: '20px', height: '25px' }}
                   />
