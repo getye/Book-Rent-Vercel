@@ -13,7 +13,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'upload/pizza', // Folder in Cloudinary where images will be uploaded
+    folder: 'book/cover', // Folder in Cloudinary where images will be uploaded
     format: async (req, file) => 'png', // Set image format (optional)
     public_id: (req, file) => {
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
