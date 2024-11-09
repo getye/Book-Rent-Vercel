@@ -3,7 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const BookController = require('../controllers/BookController');
 const protect = require('../middleware/auth');
-const cover = require('../middleware/pizza-images')
+const cover = require('../middleware/book-cover')
 
 const bookRouter = express.Router();
 
