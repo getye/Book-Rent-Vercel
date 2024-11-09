@@ -28,7 +28,7 @@ const getBooks = async (req, res) => {
         const books = await BookModel.getAllBooks();
         const formattedBooks = books.rows.map(book => ({
             ...book,
-            book_cover: path.basename(book.book_cover) // Only send the filename
+            book_cover: book.book_cover
         }));
         res.json(formattedBooks);
         //res.json(books.rows);
