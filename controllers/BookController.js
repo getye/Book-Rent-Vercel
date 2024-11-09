@@ -9,7 +9,6 @@ const uploadBook = async (req, res) => {
     const { title, author, price, quantity, catagory } = req.body;
     const cover = req.file.filename; // Store only the filename
     const book_status = "Pending";
-    console.log("Book cover:", cover)
 
     try {
         await BookModel.uploadBook({
