@@ -81,7 +81,7 @@ export const OwnerViewBooks = () => {
                 Book Category
               </TableCell>
               <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
-                Book Cover
+                 Cover
               </TableCell>
               <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>
                 Status
