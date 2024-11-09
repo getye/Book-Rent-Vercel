@@ -1,4 +1,4 @@
-import { Table, TableHead, TableRow, TableCell, TableBody, Box, Paper, IconButton, InputBase, Typography, CardMedia } from '@mui/material';
+import { Table, TableHead, TableRow, TableCell, TableBody, Box, Paper, IconButton, InputBase, Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { ownerFetchBooksRequest, setSearchTerm } from '../../services/actions/bookActions';
@@ -106,12 +106,12 @@ export const OwnerViewBooks = () => {
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.total_quantity-book.rent_quantity}</TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.price}</TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.catagory}</TableCell>
+                  { console.log(book.book_cover)}
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
-                <CardMedia 
-                    component="img"
-                    sx={{ width: 40, height: 40}} 
-                    image={book.book_cover} 
-                    alt={" "}
+                <img
+                    src={book.book_cover}
+                    alt="Book Cover"
+                    style={{ width: '20px', height: '25px' }}
                   />
                 </TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center', color: 'white', bgcolor: book.book_status === "Pending" ? '#FFA500' : book.book_status === "Accepted" ? '#008000' : '#FF0000' }}>
