@@ -48,6 +48,7 @@ export const OwnerBookUpload = () => {
       return;
     }
     console.log(formData.bookTitle)
+    console.log(formDataToSubmit)
     const response = await fetch(`${window.location.origin}/owner/book/upload`, {
       method: 'POST',
       headers: {
