@@ -132,7 +132,7 @@ export const ApproveBooks = () => {
                             <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.total_quantity}</TableCell>
                             <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
                                 <img
-                                    src={`${window.location.origin}/uploads/${book.book_cover}`}
+                                    src={`${window.location.origin}/book/cover/${book.book_cover}`}
                                     alt='Book Cover'
                                     style={{ width: '20px', height: '25px' }}
                                 />

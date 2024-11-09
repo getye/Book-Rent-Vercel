@@ -108,7 +108,7 @@ import { BookDetailsModal } from './renter_rent_book';
                   <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.catagory}</TableCell>
                   <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.price}</TableCell>
                   <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
-                    <img src={`${window.location.origin}/uploads/${book.book_cover}`} alt='Book Cover' style={{ width: '20px', height: '25px' }} />
+                    <img src={`${window.location.origin}/book/cover/${book.book_cover}`} alt='Book Cover' style={{ width: '20px', height: '25px' }} />
                   </TableCell>
                   <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
                     <Tooltip title="Rent this book?">

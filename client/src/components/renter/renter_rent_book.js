@@ -59,7 +59,7 @@ export const BookDetailsModal = ({ open, handleClose, selectedBook }) => {
                   <Typography sx={{ mt: 2 }}><strong>Price:</strong> {selectedBook.price} ETB/day</Typography>
                 </Grid>
                 <Grid item xs={6}>
-                  <img src={`${window.location.origin}/uploads/${selectedBook.book_cover}`} alt="Book Cover" style={{ width: '50%', height: '70%' }} />
+                  <img src={`${window.location.origin}/book/cover/${selectedBook.book_cover}`} alt="Book Cover" style={{ width: '50%', height: '70%' }} />
                 </Grid>
               </Grid>
               <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1, paddingRight:9}}>

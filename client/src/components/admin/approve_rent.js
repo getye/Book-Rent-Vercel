@@ -102,7 +102,7 @@ export const ApproveRent = () => {
                                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{rent.end_date}</TableCell>
                                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
                                     <img
-                                        src={`${window.location.origin}/uploads/${rent.book_cover}`}
+                                        src={`${window.location.origin}/book/cover/${rent.book_cover}`}
                                         alt='Book Cover'
                                         style={{ width: '20px', height: '25px' }}
                                     />
@@ -150,7 +150,7 @@ export const ApproveRent = () => {
                                 </Grid>
                                 <Grid item xs={4}>
                                     <img
-                                        src={`${window.location.origin}/uploads/${selectedBook.book_cover}`}
+                                        src={`${window.location.origin}/book/cover/${selectedBook.book_cover}`}
                                         alt='Book Cover'
                                         style={{ width: '150px', height: '200px' }}
                                     />
