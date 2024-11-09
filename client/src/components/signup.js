@@ -88,6 +88,7 @@ export const Signup = () => {
     try {
       // Validate the form values with Zod
       signupSchema.parse(formValues);
+      console.log("Submited data:", formValues)
       
       // If validation passes, proceed with the signup
       const response = await Axios.post(`${window.location.origin}/user/signup`, formValues);
