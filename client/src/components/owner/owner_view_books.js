@@ -1,4 +1,4 @@
-import { Table, TableHead, TableRow, TableCell, TableBody, Box, Paper, IconButton, InputBase, Typography } from '@mui/material';
+import { Table, TableHead, TableRow, TableCell, TableBody, Box, Paper, IconButton, InputBase, Typography, CardMedia } from '@mui/material';
 import { useState, useEffect } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { ownerFetchBooksRequest, setSearchTerm } from '../../services/actions/bookActions';
@@ -8,7 +8,6 @@ export const OwnerViewBooks = () => {
     const dispatch = useDispatch();
     const [search, setSearch] = useState('');
     const { loading, books, error } = useSelector(state => state.books);
-    console.log("books:", books.book_cover)
 
     // Fetch books on component mount
     useEffect(() => {
@@ -108,7 +107,12 @@ export const OwnerViewBooks = () => {
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.price}</TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.catagory}</TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
-                  <img src={`${window.location.origin}/${book.book_cover}`} alt='Book Cover' style={{ width: '20px', height: '25px' }} />
+                  <CardMedia
+                        component="img"
+                        sx={{ width: 40, height: 40, borderRadius: '50%' }} 
+                        image={book.book_cover} 
+                        alt={" "}
+                      />
                 </TableCell>
                 <TableCell sx={{ padding: '0px', textAlign: 'center', color: 'white', bgcolor: book.book_status === "Pending" ? '#FFA500' : book.book_status === "Accepted" ? '#008000' : '#FF0000' }}>
                   {book.book_status}
