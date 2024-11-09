@@ -8,7 +8,7 @@ export const OwnerViewBooks = () => {
     const dispatch = useDispatch();
     const [search, setSearch] = useState('');
     const { loading, books, error } = useSelector(state => state.books);
-    console.log("books:", books)
+    console.log("books:", books.book_cover)
 
     // Fetch books on component mount
     useEffect(() => {
