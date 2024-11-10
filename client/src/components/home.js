@@ -28,8 +28,8 @@ export const Home = () => {
             container 
             sx={{
                 alignItems: 'center', 
-                paddingTop: 9, 
-                pl: {xs: '1%', sm: '5%', md: '10%', lg: '15%'},
+                paddingTop: 12, 
+                pl: {xs: '1%', sm: '10%'},
                 background: 'linear-gradient(to bottom, #FFFFFF, #F5D58E, #FFFFFF)',
             }}
             >
@@ -38,7 +38,7 @@ export const Home = () => {
                 background: 'linear-gradient(to right, #FF8C00, #FFCBA4)', 
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                fontSize: {xs: '1rem', sm: '1.5rem'},
+                fontSize: {xs: '1rem', sm: '2rem'},
                 fontWeight: 'bold',
             }}
             >
@@ -46,11 +46,17 @@ export const Home = () => {
             </Typography>
         </Grid>
         <Box sx={{ paddingTop: 1, 
-            ml: {xs: '2%', sm: '5%', md: '10%', lg: '15%'},
-            mr: {xs: '2%', sm: '5%', md: '10%', lg: '15%'},
+            ml: {xs: '1%', sm: '7%', md: '10%', lg: '15%'},
+            mr: {xs: '1%', sm: '7%', md: '10%', lg: '15%'},
             mb: {xs: 1, sm: 2, md: 3, lg: 4},
             }}>
-            <Typography>Available Books</Typography>
+            <Typography
+                sx={{
+                    color:'#FF8C00',
+                    fontSize: {xs: '1rem', sm: '2rem'},
+                    fontWeight: 'bold',
+                }}
+            >Available Books</Typography>
             <Divider/>
           <Grid container spacing={3}> 
             {books.map((book) => (
