@@ -118,7 +118,7 @@ export const Home = () => {
         </Grid>
 
         <Box sx={{ paddingTop: 1, 
-            ml: {xs: '1%', sm: '15%'},
+            ml: {xs: '1%', sm: '17%'},
             mr: {xs: '1%', sm: '10%'},
             mb: {xs: 1, sm: 2, md: 3, lg: 4},
             }}>

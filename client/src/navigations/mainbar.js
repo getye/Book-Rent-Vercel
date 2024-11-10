@@ -20,6 +20,8 @@ import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import Groups2OutlinedIcon from '@mui/icons-material/Groups2Outlined';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import RuleFolderIcon from '@mui/icons-material/RuleFolder';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
+import InfoIcon from '@mui/icons-material/Info';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { Divider, MenuItem } from '@mui/material';
@@ -157,6 +159,24 @@ export const MainBar = (props) => {
           </>
         )}
 
+      <ListItem disablePadding onClick={() => navigate('/contact')}>
+        <ListItemButton>
+          <ListItemIcon sx={{ color: 'white' }}>
+            <ContactPageIcon />
+          </ListItemIcon>
+          <ListItemText primary="Contact" />
+        </ListItemButton>
+      </ListItem>
+      
+      <ListItem disablePadding onClick={() => navigate('/about')}>
+        <ListItemButton>
+          <ListItemIcon sx={{ color: 'white' }}>
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText primary="About" />
+        </ListItemButton>
+      </ListItem>
+
       <ListItem disablePadding>
         <ListItemButton>
           <ListItemIcon sx={{ color: 'white' }}>
@@ -187,8 +207,6 @@ export const MainBar = (props) => {
                                             width: 1, bgcolor: '#151B54' }}>
         <Toolbar>
           <MenuItem onClick={() => navigate('/')}>Home</MenuItem>
-          <MenuItem onClick={() => navigate('/about')}>About</MenuItem>
-          <MenuItem onClick={() => navigate('/contact')}>Contact us</MenuItem>
           {(!userRole) ? (
               <>
               <MenuItem onClick={() => navigate('/signup')}>Sign up</MenuItem>
