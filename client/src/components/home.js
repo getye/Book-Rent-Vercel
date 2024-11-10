@@ -64,8 +64,9 @@ export const Home = () => {
                         background: 'linear-gradient(to right, #FF8C00, #FFCBA4)', 
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
-                        fontSize: { xs: '8px', sm: '12px' },
+                        fontSize: { xs: '12px', sm: '18px' },
                         fontWeight: 'bold',
+                        mt:4,
                     }}
                 >
                     Search available books here by book title, book author, and book category.
@@ -78,7 +79,7 @@ export const Home = () => {
                     <Paper
                         sx={{ 
                             display: 'flex', 
-                            width: "45%", 
+                            width: {xs:'95%', sm:'60%', md:'45%'}, 
                             border: 1, 
                             height: '1%',
                             borderRadius: 4, 
