@@ -46,7 +46,7 @@ export const Home = () => {
             }}
         >
             {/* Typography Row */}
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{ml:{sm:'10%'}}}>
                 <Typography 
                     sx={{
                         background: 'linear-gradient(to right, #FF8C00, #FFCBA4)', 
@@ -61,7 +61,7 @@ export const Home = () => {
             </Grid>
 
             {/* Box Row */}
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{ml:{sm:'10%'}}}>
                 <Box sx={{ paddingTop: 2 }}>
                     <Paper
                         sx={{ 
@@ -90,8 +90,8 @@ export const Home = () => {
         </Grid>
 
         <Box sx={{ paddingTop: 1, 
-            ml: {xs: '1%', sm: '7%', md: '10%', lg: '15%'},
-            mr: {xs: '1%', sm: '7%', md: '10%', lg: '15%'},
+            ml: {xs: '1%', sm: '10%'},
+            mr: {xs: '1%', sm: '10%'},
             mb: {xs: 1, sm: 2, md: 3, lg: 4},
             }}>
             <Typography
