@@ -58,6 +58,18 @@ export const Home = () => {
                 >
                     A Book Rental Application, enabling you to rent books.
                 </Typography>
+
+                <Typography 
+                    sx={{
+                        background: 'linear-gradient(to right, #FF8C00, #FFCBA4)', 
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        fontSize: { xs: '8px', sm: '12px' },
+                        fontWeight: 'bold',
+                    }}
+                >
+                    Search available books here by book title, book author, and book category.
+                </Typography>
             </Grid>
 
             {/* Box Row */}
@@ -105,11 +117,11 @@ export const Home = () => {
         </Grid>
 
         <Box sx={{ paddingTop: 1, 
-            ml: {xs: '1%', sm: '10%'},
+            ml: {xs: '1%', sm: '15%'},
             mr: {xs: '1%', sm: '10%'},
             mb: {xs: 1, sm: 2, md: 3, lg: 4},
             }}>
-          <Grid container spacing={3}> 
+          <Grid container spacing={3} > 
             {filteredBooks.map((book) => (
             <Grid item xs={12} sm={4} key={book.book_id}> 
                 <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 2 }}>
