@@ -87,6 +87,21 @@ export const Home = () => {
                     </Paper>
                 </Box>
             </Grid>
+            {/* Typography Row */}
+            <Grid item xs={12} sx={{ml:{sm:'10%'}}}>
+                <Typography 
+                    sx={{
+                        background: 'linear-gradient(to right, #FF8C00, #FFCBA4)', 
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        fontSize: { xs: '0.8rem', sm: '1.5rem' },
+                        fontWeight: 'bold',
+                    }}
+                >
+                    Available Books
+                </Typography>
+                <Divider/>
+            </Grid>
         </Grid>
 
         <Box sx={{ paddingTop: 1, 
@@ -94,14 +109,6 @@ export const Home = () => {
             mr: {xs: '1%', sm: '10%'},
             mb: {xs: 1, sm: 2, md: 3, lg: 4},
             }}>
-            <Typography
-                sx={{
-                    color:'#FF8C00',
-                    fontSize: {xs: '1rem', sm: '2rem'},
-                    fontWeight: 'bold',
-                }}
-            >Available Books</Typography>
-            <Divider/>
           <Grid container spacing={3}> 
             {filteredBooks.map((book) => (
             <Grid item xs={12} sm={4} key={book.book_id}> 
