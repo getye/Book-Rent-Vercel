@@ -29,7 +29,7 @@ export const Home = () => {
             sx={{
                 alignItems: 'center', 
                 paddingTop: 9, 
-                pl: {xs: '1%', sm: '2%', md: '3%', lg: '5%'},
+                pl: {xs: '1%', sm: '5%', md: '10%', lg: '15%'},
                 background: 'linear-gradient(to bottom, #FFFFFF, #F5D58E, #FFFFFF)',
             }}
             >
@@ -42,13 +42,8 @@ export const Home = () => {
                 fontWeight: 'bold',
             }}
             >
-            Rent Now
+            A Book Rental Aplication, enable you to rent books.
             </Typography>
-            <Typography 
-            sx={{
-                fontSize: {xs: '10px', sm: '12px', md: '14px', lg: '16px'},
-            }}
-            >Rent fiction, business and self-help books. </Typography>
         </Grid>
         <Box sx={{ paddingTop: 1, 
             ml: {xs: '2%', sm: '5%', md: '10%', lg: '15%'},
@@ -70,7 +65,7 @@ export const Home = () => {
                 <CardContent sx={{ textAlign: 'center' }}> {/* Center align text */}
                     <Typography variant="h5" sx={{fontWeight: 'bold'}}>{book.book_title}</Typography>
                     <Typography variant="body2">
-                        {book.author}
+                        {book.catagory}
                     </Typography>
                     <Typography variant="h5" sx={{ color: '#32CD32', fontWeight: 'bold', display: 'inline' }}>
                     {book.price}
@@ -85,11 +80,9 @@ export const Home = () => {
                     </Button>
 
                     <Divider sx={{mt:2}}/>
-    
-                        <Typography variant="body1" sx={{fontWeight: 'bold'}}>
-                        {book.book_owner}
-                        </Typography>
-
+                    <Typography variant="body1" sx={{fontWeight: 'bold'}}>
+                        {book.author}
+                    </Typography>
                 </CardContent>
                 </Card>
             </Grid>
