@@ -62,7 +62,7 @@ export const BookDetailsModal = ({ open, handleClose, selectedBook }) => {
                 <img
                       src={selectedBook.book_cover}
                       alt="Book Cover"
-                      style={{ width: '20px', height: '25px' }}
+                      style={{ width: '50px', height: '70px' }}
                       />
                 </Grid>
               </Grid>
