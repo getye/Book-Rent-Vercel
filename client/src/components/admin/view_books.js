@@ -91,7 +91,6 @@ export const ViewBooks = () => {
                                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.total_quantity - book.rent_quantity}</TableCell>
                                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.price}</TableCell>
                                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.catagory}</TableCell>
-                                {book.book_cover}
                                 <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
                                 <img
                                     src={`https://res.cloudinary.com/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload/book/cover/${book.book_cover}`}
