@@ -82,25 +82,39 @@ export const OwnerBookUpload = () => {
   ];
 
   return (
-    <Box sx={{ paddingLeft: 32, paddingTop: 10 }}>
+    <Box sx={{ paddingTop: 10, alignItems: 'center', alignContent: 'center', paddingLeft: {xs:1, sm:10, md:20, lg:32} }}>
       <Box
         component="form"
         onSubmit={handleSubmit}
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          p: 4,
-          border: '1px solid #ccc',
-          borderRadius: 2,
-          maxWidth: 0.68,
+          marginLeft: 1,
+          padding: 3,
+          border: '3px solid #4B3F72',          // Dark purple/blue for a classic cover
+          borderRadius: '4px',                  // Slightly rounded edges
+          boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.2)', // Deeper shadow for depth
+          backgroundColor: '#FFF7E6',           // Light cream color for pages
+          position: 'relative',
+          overflow: 'hidden',
+          
+          // Spine effect
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '20px',
+            height: '100%',
+            backgroundColor: '#4B3F72',         // Matching the border color
+            borderRight: '3px solid #4B3F72',
+            boxShadow: 'inset 0 0 10px rgba(0,0,0,0.3)', // Inner shadow for a "spine" look
+          },
         }}
       >
         <Typography variant="h5" gutterBottom pb={1}>
           Add a New Book
         </Typography>
         <Grid container spacing={2}>
-          <Grid item xs={5.6}>
+          <Grid item xs ={12} sm={5.6}>
             <TextField
               label="Book Title"
               name="bookTitle"
@@ -133,7 +147,7 @@ export const OwnerBookUpload = () => {
             />
           </Grid>
           <Divider orientation="vertical" flexItem sx={{ ml: 2 }} />
-          <Grid item xs={5.6}>
+          <Grid item xs={12} sm={5.6}>
             <TextField
               label="Book Quantity"
               type="number"
