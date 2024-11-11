@@ -42,7 +42,7 @@ export const Home = () => {
                 alignItems: 'center', 
                 paddingTop: 12, 
                 pl: { xs: '1%', sm: '10%' },
-                background: 'linear-gradient(to bottom, #ADD8E6, #EEEEEE, #ADD8E6, #EEEEEE)',
+                background: 'linear-gradient(to bottom, #F5F5F5, #EEEEEE, #F5F5F5, #EEEEEE)',
             }}
         >
             {/* Typography Row */}
@@ -107,7 +107,7 @@ export const Home = () => {
                         background: 'linear-gradient(to right, #FF8C00, #FFCBA4)', 
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
-                        fontSize: { xs: '0.8rem', sm: '1.5rem' },
+                        fontSize: { xs: '1rem', sm: '1.5rem' },
                         fontWeight: 'bold',
                     }}
                 >
@@ -133,7 +133,10 @@ export const Home = () => {
                     alt={book.book_title}
                 />
                 <CardContent sx={{ textAlign: 'center' }}> {/* Center align text */}
-                    <Typography variant="h5" sx={{fontWeight: 'bold'}}>{book.book_title}</Typography>
+                    <Typography 
+                        variant="h5" 
+                        sx={{fontSize: { xs: '1rem', sm: '1.5rem' }, fontWeight: 'bold'}}
+                        >{book.book_title}</Typography>
                     <Typography variant="body2">
                         {book.catagory}
                     </Typography>
