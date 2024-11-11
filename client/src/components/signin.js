@@ -59,16 +59,31 @@ export const Signin = () => {
           sx={{
             marginLeft: 1,
             padding: 3,
-            border: '2px solid #A52A2A', // Dark brown border
-            borderRadius: '8px',          // Rounded edges to resemble a book's binding
-            boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.3)', // Slight shadow for depth
-            backgroundColor: '#FAF0E6',    // Light tan color for a classic book feel
+            border: '3px solid #4B3F72',          // Dark purple/blue for a classic cover
+            borderRadius: '4px',                  // Slightly rounded edges
+            boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.2)', // Deeper shadow for depth
+            backgroundColor: '#FFF7E6',           // Light cream color for pages
+            position: 'relative',
+            overflow: 'hidden',
+            
+            // Spine effect
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '20px',
+              height: '100%',
+              backgroundColor: '#4B3F72',         // Matching the border color
+              borderRight: '3px solid #4B3F72',
+              boxShadow: 'inset 0 0 10px rgba(0,0,0,0.3)', // Inner shadow for a "spine" look
+            },
           }}
-          >
-          <Typography component="h1" variant="h5" sx={{ fontFamily: 'serif' }}>
+        >
+          <Typography component="h1" variant="h5" sx={{ fontFamily: 'serif', color: '#4B3F72' }}>
             Sign in
           </Typography>
-          <Divider sx={{ borderColor: '#A52A2A' }} />
+          <Divider sx={{ borderColor: '#4B3F72' }} />
 
           <TextField
             margin="normal"
@@ -110,6 +125,7 @@ export const Signin = () => {
             </Typography>
           </Grid>
         </Box>
+
 
       </Grid>
 
