@@ -56,7 +56,7 @@ export const ViewUsers = () => {
                     />
             </Paper>
         </Box>
-      <Table sx={{ maxWidth: 0.9, border: 'black' }}>
+      <Table sx={{ minWidth:'100%', border: 'black' }}>
         <TableHead sx={{ alignContent: 'center' }}>
           <TableRow sx={{ bgcolor: 'blue' }}>
             <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>No</TableCell>
