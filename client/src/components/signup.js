@@ -148,7 +148,7 @@ export const Signup = () => {
             <Typography component="h1" variant="h5">
               Sign up
             </Typography>
-            <Divider sx={{ paddingBottom: 2 }}/>
+            <Divider sx={{ borderColor: '#4B3F72' }}/>
             <TextField
               size="small"
               margin="normal"
