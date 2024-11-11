@@ -113,22 +113,33 @@ export const Signin = () => {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Box sx={{justifyContent:'center', alignItems:'center'}}>
-            <Button type="submit" 
+          <Box
+            sx={{
+              display: 'flex',                  // Set the Box as a flex container
+              justifyContent: 'center',          // Centers the button horizontally
+              alignItems: 'center',              // Centers the button vertically (optional)
+              width: '100%',                     // Ensure it takes full width if needed
+            }}
+          >
+            <Button
+              type="submit"
               sx={{
-                bgcolor:'#1974D2', 
-                paddingLeft:3,
-                paddingRight:3,
-                borderRadius:1,
-                color:'white',
+                bgcolor: '#1974D2',
+                paddingLeft: 3,
+                paddingRight: 3,
+                borderRadius: 1,
+                color: 'white',
                 textTransform: 'none',
                 '&:hover': {
-                        bgcolor: '#1974D2',
-                        opacity: 0.9,
-                      },}}>
+                  bgcolor: '#1974D2',
+                  opacity: 0.9,
+                },
+              }}
+            >
               Sign In
             </Button>
           </Box>
+
             
           <Grid>
             <Link href="/forgot">Forgot password?</Link>

@@ -175,13 +175,15 @@ export const Signup = () => {
               error={Boolean(errors.name)}
               helperText={errors.name?.[0]}
             />
-            <FormControl size='small' sx={{ paddingBottom: 2, width: 300 }} variant="outlined">
+            <FormControl 
+              size='small'
+              margin="normal"
+              fullWidth
+              variant="outlined">
               <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password"
                 type={showPassword ? 'text' : 'password'}
-                margin="normal"
-                fullWidth
                 name="password"
                 value={formValues.password}
                 onChange={handleChange}
@@ -204,7 +206,12 @@ export const Signup = () => {
               />
               {errors.password && <Typography color="error">{errors.password?.[0]}</Typography>}
             </FormControl>
-            <FormControl size='small' sx={{ paddingBottom: 2, width: 300 }} variant="outlined">
+            <FormControl 
+              size='small'
+              margin="normal"
+              fullWidth
+              variant="outlined"
+              >
               <InputLabel htmlFor="outlined-adornment-confirm">Confirm Password</InputLabel>
               <OutlinedInput
                 id="outlined-adornment-confirm"
@@ -254,7 +261,6 @@ export const Signup = () => {
               fullWidth
               required
               options={usertypes}
-              sx={{ width: 300, paddingBottom: 2 }}
               renderInput={(params) => <TextField {...params} label="User type" />}
               onChange={handleUserTypeChange}
               getOptionLabel={(option) => option.label}
@@ -262,18 +268,33 @@ export const Signup = () => {
             />
             {errors.user_type && <Typography color="error">{errors.user_type?.[0]}</Typography>}
             <Divider />
-            <Button type="submit" 
+            <Box
                 sx={{
-                  bgcolor:'#1974D2', 
-                  paddingLeft:3,
-                  paddingRight:3,
-                  borderRadius:1,
-                  color:'white',
-                  textTransform: 'none',
-                  '&:hover': {
-                          bgcolor: '#1974D2',
-                          opacity: 0.9,
-                        },}}>Sign up</Button>
+                  display: 'flex',                  // Set the Box as a flex container
+                  justifyContent: 'center',          // Centers the button horizontally
+                  alignItems: 'center',              // Centers the button vertically (optional)
+                  width: '100%',                     // Ensure it takes full width if needed
+                }}
+              >
+                <Button
+                  type="submit"
+                  sx={{
+                    bgcolor: '#1974D2',
+                    paddingLeft: 3,
+                    paddingRight: 3,
+                    borderRadius: 1,
+                    color: 'white',
+                    textTransform: 'none',
+                    '&:hover': {
+                      bgcolor: '#1974D2',
+                      opacity: 0.9,
+                    },
+                  }}
+                >
+                  Sign up
+                </Button>
+              </Box>
+
             <Typography component="h5">
               Have an account? <Link href="/signin">Sign in</Link>
             </Typography>
