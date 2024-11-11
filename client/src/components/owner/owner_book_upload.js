@@ -116,92 +116,87 @@ export const OwnerBookUpload = () => {
         <Grid container spacing={2}>
           <Grid item xs ={12} sm={5.6}>
             <TextField
-              label="Book Title"
-              name="bookTitle"
-              value={formData.bookTitle}
-              onChange={handleChange}
-              fullWidth
-              sx={{ paddingBottom: 2 }}
-              size="small"
-              required
-            />
+                label="Book Title"
+                name="bookTitle"
+                value={formData.bookTitle}
+                onChange={handleChange}
+                fullWidth
+                sx={{ paddingBottom: 2 }}
+                size="small"
+                required
+             />
             <TextField
-              label="Book Author"
-              name="bookAuthor"
-              value={formData.bookAuthor}
-              onChange={handleChange}
-              fullWidth
-              sx={{ paddingBottom: 2 }}
-              size="small"
-              required
-            />
+                label="Book Author"
+                name="bookAuthor"
+                value={formData.bookAuthor}
+                onChange={handleChange}
+                fullWidth
+                sx={{ paddingBottom: 2 }}
+                size="small"
+                required
+              />
             <TextField
-              label="Book Price"
-              type="number"
-              name="bookPrice"
-              value={formData.bookPrice}
-              onChange={handleChange}
-              fullWidth
-              size="small"
-              required
-            />
+                label="Book Price"
+                type="number"
+                name="bookPrice"
+                value={formData.bookPrice}
+                onChange={handleChange}
+                fullWidth
+                size="small"
+                required
+              />
           </Grid>
           <Divider orientation="vertical" flexItem sx={{ ml: 2 }} />
           <Grid item xs={12} sm={5.6}>
             <TextField
-              label="Book Quantity"
-              type="number"
-              name="bookQuantity"
-              value={formData.bookQuantity}
-              onChange={handleChange}
-              fullWidth
-              sx={{ paddingBottom: 2 }}
-              size="small"
-              required
-            />
+                label="Book Quantity"
+                type="number"
+                name="bookQuantity"
+                value={formData.bookQuantity}
+                onChange={handleChange}
+                fullWidth
+                sx={{ paddingBottom: 2 }}
+                size="small"
+                required
+              />
             <Autocomplete
-              disablePortal
-              id="catagory"
-              size="small"
-              sx={{ paddingBottom: 2 }}
-              required
-              value={formData.selectedBook}
-              options={bookOptions}
-              fullWidth
-              isOptionEqualToValue={(option, value) => option.value === value?.value}
-              renderInput={(params) => <TextField {...params} label="Book Category" />}
-              onInputChange={(event, newInputValue) => {
-                setFormData((prev) => ({ ...prev, selectedBook: newInputValue }));
-              }}
-            />
+                disablePortal
+                id="catagory"
+                size="small"
+                sx={{ paddingBottom: 2 }}
+                required
+                value={formData.selectedBook}
+                options={bookOptions}
+                fullWidth
+                isOptionEqualToValue={(option, value) => option.value === value?.value}
+                renderInput={(params) => <TextField {...params} label="Book Category" />}
+                onInputChange={(event, newInputValue) => {
+                  setFormData((prev) => ({ ...prev, selectedBook: newInputValue }));
+                }}/>
             <Box
               sx={{
                 display: 'flex',
-                alignItems: 'center',
-              }}
-            >
+                alignItems: 'center',}}>
               <input
-                accept="image/*"
-                id="book-cover-upload"
-                name="cover"
-                type="file"
-                onChange={handleCoverUpload}
-                style={{ display: 'none' }}
-              />
+                  accept="image/*"
+                  id="book-cover-upload"
+                  name="cover"
+                  type="file"
+                  onChange={handleCoverUpload}
+                  style={{ display: 'none' }}/>
               <Box
                 sx={{
                   border: 1,
                   width: '100%',
                   borderColor: '#ccc',
                   borderRadius: 2,
-                }}
-              >
+                }}>
                 <label htmlFor="book-cover-upload">
                   <IconButton
                     component="span"
                     size="small"
                     color="primary"
-                  >
+                   >
                     <CloudUploadIcon />
                     {formData.bookCover ? formData.bookCover.name : ' Upload Book Cover'}
                   </IconButton>
