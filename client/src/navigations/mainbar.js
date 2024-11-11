@@ -41,7 +41,7 @@ export const MainBar = (props) => {
   
   const drawer = (
     <List sx={{ bgcolor: "#151B54", height: "100%", color: 'white' }}>
-      <Stack alignItems="center" padding={2} direction="row" gap={2}>
+      <Stack alignItems="center" padding={{xs:1, sm:2}} direction="row" gap={2}>
         <MenuIcon 
           sx={{ fontSize: { xs: '1.5rem' } }} 
           onClick={drawerHandle}/>
@@ -242,12 +242,12 @@ export const MainBar = (props) => {
            variant="persistent"
            open
            sx={{
-            width: close ? '25px' : '180px', 
+            width: close ? '40px' : '180px', 
             height:'auto', 
             display: { xs:'block', sm:'none'},
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
-              width: close ? '25px' : '180px',
+              width: close ? '40px' : '180px',
               height:'auto'
             },
            }}
