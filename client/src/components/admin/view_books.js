@@ -32,12 +32,12 @@ export const ViewBooks = () => {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <Box sx={{ paddingTop: "5%", marginLeft: "20%", justifyContent: 'center' }}>
+        <Box sx={{ paddingTop: "5%", marginLeft: {xs:'1%', sm:'20%'}, justifyContent: 'center' }}>
             <Box sx={{ paddingTop: 2 }}>
                 <Paper
                     sx={{
                         display: 'flex',
-                        width: "45%",
+                        width: {xs:'100%', sm:'50%'},
                         border: 1,
                         borderRadius: 4,
                         borderColor: 'blue',
@@ -58,7 +58,7 @@ export const ViewBooks = () => {
             </Box>
 
             {books.length !== 0 ? (
-                <Table sx={{ maxWidth: 0.95, border: 'black' }}>
+                <Table sx={{ border: 'black' }}>
                     <TableHead sx={{ alignContent: 'center' }}>
                         <TableRow sx={{ bgcolor: 'blue' }}>
                             <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>No</TableCell>
