@@ -15,13 +15,17 @@ import { ApproveRent } from './components/admin/approve_rent';
 import { RenterBooks } from './components/renter/renter_books';
 import { OwnerViewBooks } from './components/owner/owner_view_books';
 import { RenterRents } from './components/renter/renter_rents';
+import { createTheme, ThemeProvider } from '@mui/material';
 
+const theme = createTheme();
 
 function App() {
 
   return (
     <BrowserRouter>
-    <MainBar/>
+    <ThemeProvider theme={theme}>
+        <MainBar />
+    </ThemeProvider>
         <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/signin' element={<Signin/>}/>

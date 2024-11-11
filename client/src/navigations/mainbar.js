@@ -25,17 +25,17 @@ import InfoIcon from '@mui/icons-material/Info';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import HomeIcon from '@mui/icons-material/Home';
-import { Divider, MenuItem, useMediaQuery } from '@mui/material';
+import { createTheme, Divider, MenuItem, useMediaQuery } from '@mui/material';
 import { Profile } from './profile'
 
 const drawerWidth = 240;
+const theme = createTheme();
 
 export const MainBar = (props) => {
   const userRole = localStorage.getItem('userRole');
   const navigate = useNavigate();
   const [close, setClose] = React.useState(false)
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('xs'));
-
+  const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
   const { window } = props;
 
   const drawerHandle = () =>{
