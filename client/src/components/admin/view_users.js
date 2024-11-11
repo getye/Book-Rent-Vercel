@@ -38,7 +38,7 @@ export const ViewUsers = () => {
             <Paper 
               sx={{ 
                   display: 'flex', 
-                  width: {xs:'100%', sm:'50%'},
+                  width: {xs:'100%', sm:'80%', md:'50%'},
                   border: 1, 
                   height:'1%',
                   borderRadius: 4, 
