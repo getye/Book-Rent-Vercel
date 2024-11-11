@@ -25,7 +25,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import HomeIcon from '@mui/icons-material/Home';
-import { Divider, MenuItem } from '@mui/material';
+import { Divider, MenuItem, useMediaQuery } from '@mui/material';
 import { Profile } from './profile'
 
 const drawerWidth = 240;
@@ -34,6 +34,8 @@ export const MainBar = (props) => {
   const userRole = localStorage.getItem('userRole');
   const navigate = useNavigate();
   const [close, setClose] = React.useState(false)
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('xs'));
+
   const { window } = props;
 
   const drawerHandle = () =>{
@@ -63,7 +65,7 @@ export const MainBar = (props) => {
       {userRole === "Admin" && (
       <>
         <ListItem disablePadding sx={{ display: "block" }} onClick={() => { navigate("admin/dashboard") }}>
-          <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
+          <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{ xs: 0.25, sm: 0.5 }}}} >
             <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
               <SpaceDashboardIcon fontSize="inherit" />
             </ListItemIcon>
@@ -217,7 +219,7 @@ export const MainBar = (props) => {
       <AppBar position="fixed" gap={2} sx={{alignItems:'end', color: "white", 
                                             width: 1, bgcolor: '#151B54' }}>
         <Toolbar>         
-          <MenuItem onClick={() => navigate('/')}> {(close)? (
+          <MenuItem onClick={() => navigate('/')}> {(isMobile)? (
             <HomeIcon sx={{ color: 'white' }}/>
             ):(
               'Home'
