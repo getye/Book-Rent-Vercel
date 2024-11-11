@@ -53,10 +53,16 @@ export const ApproveRent = () => {
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
     return (
-        <Box sx={{ marginLeft: "20%", paddingTop: "5%", justifyContent: 'center' }}>
+        <Box sx={{ marginLeft: {xs:'1%', sm:'8%', md:'15%', lg:'20%'}, paddingRight:'8%', paddingTop: "5%", justifyContent: 'center' }}>
             
             <Box sx={{ paddingTop: 2 }}>
-                <Paper sx={{ display: 'flex', width: "45%", border: 1, borderRadius: 4, borderColor: 'blue', mb: 1 }}>
+                <Paper sx={{ 
+                        display: 'flex', 
+                        width: {xs:'100%', sm:'80%', md:'50%'},
+                        border: 1, 
+                        borderRadius: 4, 
+                        borderColor: 'blue', 
+                        mb: 1 }}>
                     <IconButton sx={{ p: '6px', color: 'blue' }} aria-label="search">
                         <SearchIcon />
                     </IconButton>
