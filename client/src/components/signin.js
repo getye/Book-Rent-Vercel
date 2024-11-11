@@ -80,7 +80,7 @@ export const Signin = () => {
             },
           }}
         >
-          <Typography component="h1" variant="h5" sx={{ fontFamily: 'serif', color: '#4B3F72' }}>
+          <Typography component="h1" variant="h5" sx={{ fontfontFamily: 'serif', color: '#4B3F72' }}>
             Sign in
           </Typography>
           <Divider sx={{ borderColor: '#4B3F72' }} />
@@ -113,7 +113,18 @@ export const Signin = () => {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button type="submit" fullWidth variant="contained" sx={{ mt: 1, mb: 1 }}>
+          <Button type="submit" 
+            sx={{
+              bgcolor:'#1974D2', 
+              paddingLeft:3,
+              paddingRight:3,
+              borderRadius:1,
+              color:'white',
+              textTransform: 'none',
+              '&:hover': {
+                      bgcolor: '#1974D2',
+                      opacity: 0.9,
+                    },}}>
             Sign In
           </Button>
           <Grid>

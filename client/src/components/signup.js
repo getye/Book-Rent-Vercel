@@ -119,13 +119,40 @@ export const Signup = () => {
   return (
     <Box component={'form'} onSubmit={handleSubmit}>
       <Grid container sx={{ paddingTop: 10, width: '80%', paddingLeft: 35 }}>
-          <Box sx={{ paddingLeft: 6 }}>
-            <Typography component="h1" variant="h5" sx={{ paddingBottom: 2 }}>
+        <Box
+            sx={{
+              marginLeft: 1,
+              padding: 3,
+              border: '3px solid #4B3F72',          // Dark purple/blue for a classic cover
+              borderRadius: '4px',                  // Slightly rounded edges
+              boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.2)', // Deeper shadow for depth
+              backgroundColor: '#FFF7E6',           // Light cream color for pages
+              position: 'relative',
+              overflow: 'hidden',
+              
+              // Spine effect
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '20px',
+                height: '100%',
+                backgroundColor: '#4B3F72',         // Matching the border color
+                borderRight: '3px solid #4B3F72',
+                boxShadow: 'inset 0 0 10px rgba(0,0,0,0.3)', // Inner shadow for a "spine" look
+              },
+            }}
+            >
+            
+            <Typography component="h1" variant="h5">
               Sign up
             </Typography>
+            <Divider sx={{ paddingBottom: 2 }}/>
             <TextField
               size="small"
-              sx={{ width: 300, paddingBottom: 2 }}
+              margin="normal"
+              fullWidth
               type="email"
               name="email"
               value={formValues.email}
@@ -137,7 +164,8 @@ export const Signup = () => {
             />
             <TextField
               size="small"
-              sx={{ width: 300, paddingBottom: 2 }}
+              margin="normal"
+              fullWidth
               type="text"
               name="name"
               value={formValues.name}
@@ -152,6 +180,8 @@ export const Signup = () => {
               <OutlinedInput
                 id="outlined-adornment-password"
                 type={showPassword ? 'text' : 'password'}
+                margin="normal"
+                fullWidth
                 name="password"
                 value={formValues.password}
                 onChange={handleChange}
@@ -179,6 +209,8 @@ export const Signup = () => {
               <OutlinedInput
                 id="outlined-adornment-confirm"
                 type={showConfirm ? 'text' : 'password'}
+                margin="normal"
+                fullWidth
                 name="confirmPassword"
                 value={formValues.confirmPassword}
                 onChange={handleChange}
@@ -203,7 +235,8 @@ export const Signup = () => {
             </FormControl>
             <TextField
               size="small"
-              sx={{ width: 300, paddingBottom: 2 }}
+              margin="normal"
+              fullWidth
               type="text"
               name="location"
               value={formValues.location}
@@ -217,6 +250,8 @@ export const Signup = () => {
               disablePortal
               id="usertype"
               size='small'
+              margin="normal"
+              fullWidth
               required
               options={usertypes}
               sx={{ width: 300, paddingBottom: 2 }}
@@ -227,9 +262,18 @@ export const Signup = () => {
             />
             {errors.user_type && <Typography color="error">{errors.user_type?.[0]}</Typography>}
             <Divider />
-            <Button type="submit" variant="contained" sx={{ mt: 1, mb: 1 }}>
-              Sign up
-            </Button>
+            <Button type="submit" 
+                sx={{
+                  bgcolor:'#1974D2', 
+                  paddingLeft:3,
+                  paddingRight:3,
+                  borderRadius:1,
+                  color:'white',
+                  textTransform: 'none',
+                  '&:hover': {
+                          bgcolor: '#1974D2',
+                          opacity: 0.9,
+                        },}}>Sign up</Button>
             <Typography component="h5">
               Have an account? <Link href="/signin">Sign in</Link>
             </Typography>
