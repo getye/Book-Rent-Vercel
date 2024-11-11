@@ -159,6 +159,7 @@ export const MainBar = (props) => {
           </>
         )}
 
+      <Divider sx={{ color: 'white'}} />
       <ListItem disablePadding onClick={() => navigate('/contact')}>
         <ListItemButton>
           <ListItemIcon sx={{ color: 'white' }}>
@@ -185,16 +186,6 @@ export const MainBar = (props) => {
           <ListItemText primary="Regulations" />
         </ListItemButton>
       </ListItem>
-
-      <ListItem disablePadding>
-        <ListItemButton>
-          <ListItemIcon sx={{ color: 'white' }}>
-            <NotificationsActiveIcon />
-          </ListItemIcon>
-          <ListItemText primary="Notification" />
-        </ListItemButton>
-      </ListItem>
-      <Divider sx={{ color: 'gray', paddingBottom: 15 }} />
     </List>
   );
 
@@ -213,7 +204,14 @@ export const MainBar = (props) => {
               <MenuItem onClick={() => navigate('/signin')}>Sign in</MenuItem>
               </>
           ):(
+            <>
+            <ListItemButton>
+              <ListItemIcon sx={{ color: 'white' }}>
+                <NotificationsActiveIcon />
+              </ListItemIcon>
+          </ListItemButton>
           <Profile/>
+          </>
           )}
         </Toolbar>
       </AppBar>
