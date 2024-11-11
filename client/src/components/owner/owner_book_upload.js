@@ -89,6 +89,7 @@ export const OwnerBookUpload = () => {
         sx={{
           marginLeft: 1,
           padding: 3,
+          width:{xs:'95%', sm:'80%', md:'65%'},
           border: '3px solid #4B3F72',          // Dark purple/blue for a classic cover
           borderRadius: '4px',                  // Slightly rounded edges
           boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.2)', // Deeper shadow for depth
