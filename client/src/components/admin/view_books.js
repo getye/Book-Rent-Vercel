@@ -32,7 +32,7 @@ export const ViewBooks = () => {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <Box sx={{ paddingTop: "5%", marginLeft: {xs:'1%', sm:'20%'}, paddingRight:'8%', justifyContent: 'center' }}>
+        <Box sx={{ paddingTop: "5%", marginLeft: {xs:'1%', sm:'8%', md:'15%', lg:'20%'}, paddingRight:'8%', justifyContent: 'center' }}>
             <Box sx={{ paddingTop: 2 }}>
                 <Paper
                     sx={{
