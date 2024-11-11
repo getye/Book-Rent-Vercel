@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Snackbar, Alert, Grid, Box, Typography, TextField, Button, Link, FormControlLabel, Checkbox } from '@mui/material';
+import { Snackbar, Alert, Grid, Box, Typography, TextField, Button, Link, FormControlLabel, Checkbox, Divider } from '@mui/material';
 
 export const Signin = () => {
   const navigate = useNavigate();
@@ -54,52 +54,63 @@ export const Signin = () => {
 
   return (
     <Box component={'form'} onSubmit={handleSubmit}>
-      <Grid container sx={{ paddingTop: 10, width: '80%', paddingLeft: 35 }}>
-          <Box sx={{ paddingLeft: 6 }}>
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
+      <Grid container sx={{ paddingTop: 10, width: {xs:'98%', sm:'50%'}, paddingLeft: {xs:0, sm:34} }}>
+        <Box
+          sx={{
+            marginLeft: 1,
+            padding: 3,
+            border: '2px solid #A52A2A', // Dark brown border
+            borderRadius: '8px',          // Rounded edges to resemble a book's binding
+            boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.3)', // Slight shadow for depth
+            backgroundColor: '#FAF0E6',    // Light tan color for a classic book feel
+          }}
+          >
+          <Typography component="h1" variant="h5" sx={{ fontFamily: 'serif' }}>
+            Sign in
+          </Typography>
+          <Divider sx={{ borderColor: '#A52A2A' }} />
 
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              type="email"
-              size="small"
-              label="Email Address"
-              name="email"
-              autoFocus
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              size="small"
-              id="password"
-              autoComplete="off"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 1, mb: 1 }}>
-              Sign In
-            </Button>
-            <Grid>
-              <Link href="/forgot">Forgot password?</Link>
-            </Grid>
-            <Grid className="footer">
-              <Typography component="h5">
-                Don't have an account? <Link href="/signup">Sign Up</Link>
-              </Typography>
-            </Grid>
-          </Box>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            type="email"
+            size="small"
+            label="Email Address"
+            name="email"
+            autoFocus
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            size="small"
+            id="password"
+            autoComplete="off"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
+          />
+          <Button type="submit" fullWidth variant="contained" sx={{ mt: 1, mb: 1 }}>
+            Sign In
+          </Button>
+          <Grid>
+            <Link href="/forgot">Forgot password?</Link>
+          </Grid>
+          <Grid className="footer">
+            <Typography component="h5">
+              Don't have an account? <Link href="/signup">Sign Up</Link>
+            </Typography>
+          </Grid>
+        </Box>
+
       </Grid>
 
       {/* Snackbar for notifications */}
