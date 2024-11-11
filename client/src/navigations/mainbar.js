@@ -24,6 +24,7 @@ import ContactPageIcon from '@mui/icons-material/ContactPage';
 import InfoIcon from '@mui/icons-material/Info';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import HomeIcon from '@mui/icons-material/Home';
 import { Divider, MenuItem } from '@mui/material';
 import { Profile } from './profile'
 
@@ -215,9 +216,13 @@ export const MainBar = (props) => {
       <CssBaseline />
       <AppBar position="fixed" gap={2} sx={{alignItems:'end', color: "white", 
                                             width: 1, bgcolor: '#151B54' }}>
-        <Toolbar>
-          
-          <MenuItem onClick={() => navigate('/')}>Home</MenuItem>
+        <Toolbar>         
+          <MenuItem onClick={() => navigate('/')}> {(close)? (
+            <HomeIcon sx={{ color: 'white' }}/>
+            ):(
+              'Home'
+            )}
+          </MenuItem>
           {(!userRole) ? (
               <>
               <MenuItem onClick={() => navigate('/signup')}>Sign up</MenuItem>
@@ -225,12 +230,8 @@ export const MainBar = (props) => {
               </>
           ):(
             <>
-            <ListItemButton>
-              <ListItemIcon sx={{ color: 'white' }}>
-                <NotificationsActiveIcon />
-              </ListItemIcon>
-          </ListItemButton>
-          <Profile/>
+              <NotificationsActiveIcon sx={{ color: 'white' }}/>
+              <Profile/>
           </>
           )}
         </Toolbar>
