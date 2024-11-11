@@ -33,7 +33,7 @@ export const ViewUsers = () => {
   );
 
   return (
-    <Box sx={{ paddingTop: "5%", marginLeft: {xs:'1%', sm:'5%', md:'12%', lg:'20%'}, paddingRight:'3%', justifyContent: 'center' }}>
+    <Box sx={{ paddingTop: 10, marginLeft: {xs:'1%', sm:'5%', md:'12%', lg:'20%'}, paddingRight:'3%', justifyContent: 'center' }}>
         <Box sx={{ paddingTop:2}}>
             <Paper 
               sx={{ 

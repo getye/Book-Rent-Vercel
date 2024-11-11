@@ -32,82 +32,93 @@ export const ViewBooks = () => {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <Box sx={{ paddingTop: "5%", marginLeft: {xs:'1%', sm:'8%', md:'15%', lg:'20%'}, paddingRight:'8%', justifyContent: 'center' }}>
+        <Box sx={{ 
+            paddingTop: 10, 
+            marginLeft: { xs: '1%', sm: '5%', md: '12%', lg: '20%' }, 
+            paddingRight: '8%', 
+            justifyContent: 'center' 
+          }}>
             <Box sx={{ paddingTop: 2 }}>
-                <Paper
-                    sx={{
-                        display: 'flex',
-                        width: {xs:'100%', sm:'80%', md:'50%'},
-                        border: 1,
-                        borderRadius: 4,
-                        borderColor: 'blue',
-                        mb: 1
-                    }}
-                >
-                    <IconButton sx={{ p: '6px', color: 'blue' }} aria-label="search">
-                        <SearchIcon />
-                    </IconButton>
-                    <InputBase
-                        sx={{ ml: 1, flex: 1 }}
-                        size='small'
-                        placeholder="Search"
-                        value={search} // Bind the search query
-                        onChange={handleSearch} // Handle input changes
-                    />
-                </Paper>
+              <Paper
+                sx={{
+                  display: 'flex',
+                  width: { xs: '100%', sm: '80%', md: '50%' },
+                  border: 1,
+                  borderRadius: 4,
+                  borderColor: 'blue',
+                  mb: 1
+                }}
+              >
+                <IconButton sx={{ p: '6px', color: 'blue' }} aria-label="search">
+                  <SearchIcon />
+                </IconButton>
+                <InputBase
+                  sx={{ ml: 1, flex: 1 }}
+                  size='small'
+                  placeholder="Search"
+                  value={search} // Bind the search query
+                  onChange={handleSearch} // Handle input changes
+                />
+              </Paper>
             </Box>
-
+          
             {books.length !== 0 ? (
-                <Table sx={{ maxWidth:'auto', border: 'black' }}>
-                    <TableHead sx={{ alignContent: 'center' }}>
-                        <TableRow sx={{ bgcolor: 'blue' }}>
-                            <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>No</TableCell>
-                            <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Book Title</TableCell>
-                            <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Author</TableCell>
-                            <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Total Quantity</TableCell>
-                            <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Rent Quantity</TableCell>
-                            <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Available Books</TableCell>
-                            <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Rent Price</TableCell>
-                            <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Book Category</TableCell>
-                            <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Book Cover</TableCell>
-                            <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Status</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {filteredBooks.map((book, index) => (
-                            <TableRow
-                                key={book.id}
-                                sx={{
-                                    alignItems: 'center',
-                                    height: '40px',
-                                    bgcolor: index % 2 === 0 ? '#E0E5E5' : '#EBF4FA', // Striped effect
-                                }}
-                            >
-                                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{index + 1}</TableCell>
-                                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.book_title}</TableCell>
-                                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.author}</TableCell>
-                                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.total_quantity}</TableCell>
-                                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.rent_quantity}</TableCell>
-                                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.total_quantity - book.rent_quantity}</TableCell>
-                                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.price}</TableCell>
-                                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.catagory}</TableCell>
-                                <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
-                                <img
-                                    src={book.book_cover}
-                                    alt="Book Cover"
-                                    style={{ width: '20px', height: '25px' }}
-                                  />                                </TableCell>
-                                <TableCell sx={{ padding: '0px', textAlign: 'center', color: 'white', bgcolor: book.book_status === "Pending" ? '#FFA500' : book.book_status === "Accepted" ? '#008000' : '#FF0000' }}>
-                                    {book.book_status}
-                                </TableCell>
-                                
-                            </TableRow>
-                        ))}
-                    </TableBody>
+              <Box sx={{ 
+                overflowX: 'auto', // Enable horizontal scrolling
+                maxWidth: '100%'   // Ensure it takes the full width in mobile view
+              }}>
+                <Table sx={{ minWidth: 650 }}> {/* Set a minimum width for the table */}
+                  <TableHead sx={{ alignContent: 'center' }}>
+                    <TableRow sx={{ bgcolor: 'blue' }}>
+                      <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>No</TableCell>
+                      <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Book Title</TableCell>
+                      <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Author</TableCell>
+                      <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Total Quantity</TableCell>
+                      <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Rent Quantity</TableCell>
+                      <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Available Books</TableCell>
+                      <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Rent Price</TableCell>
+                      <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Book Category</TableCell>
+                      <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Book Cover</TableCell>
+                      <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>Status</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {filteredBooks.map((book, index) => (
+                      <TableRow
+                        key={book.id}
+                        sx={{
+                          alignItems: 'center',
+                          height: '40px',
+                          bgcolor: index % 2 === 0 ? '#E0E5E5' : '#EBF4FA', // Striped effect
+                        }}
+                      >
+                        <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{index + 1}</TableCell>
+                        <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.book_title}</TableCell>
+                        <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.author}</TableCell>
+                        <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.total_quantity}</TableCell>
+                        <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.rent_quantity}</TableCell>
+                        <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.total_quantity - book.rent_quantity}</TableCell>
+                        <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.price}</TableCell>
+                        <TableCell sx={{ padding: '0px', textAlign: 'center' }}>{book.catagory}</TableCell>
+                        <TableCell sx={{ padding: '0px', textAlign: 'center' }}>
+                          <img
+                            src={book.book_cover}
+                            alt="Book Cover"
+                            style={{ width: '20px', height: '25px' }}
+                          />
+                        </TableCell>
+                        <TableCell sx={{ padding: '0px', textAlign: 'center', color: 'white', bgcolor: book.book_status === "Pending" ? '#FFA500' : book.book_status === "Accepted" ? '#008000' : '#FF0000' }}>
+                          {book.book_status}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
                 </Table>
+              </Box>
             ) : (
-                <Typography>You have no books</Typography>
+              <Typography>You have no books</Typography>
             )}
-        </Box>
+          </Box>
+          
     );
 };
