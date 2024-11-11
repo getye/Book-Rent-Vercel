@@ -36,8 +36,8 @@ export const AdminDashboard = () => {
     <>
       
       {currentPage === 1 && (
-        <Grid container sx={{ paddingTop: 10, alignItems: 'center', alignContent: 'center', paddingLeft: 32 }}>
-          <Grid item xs={11} direction={'column'} sx={{ display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
+        <Grid container sx={{ paddingTop: 10, alignItems: 'center', alignContent: 'center', paddingLeft: {xs:1, sm:34} }}>
+          <Grid item xs={12} direction={'column'} sx={{ display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
             <Typography>Earnings Graph Per Month</Typography>
             <EarningsLineChart />
           </Grid>
@@ -46,8 +46,8 @@ export const AdminDashboard = () => {
 
       
       {currentPage === 2 && (
-        <Grid container sx={{ paddingTop: 10, alignItems: 'center', alignContent: 'center', paddingLeft: 32 }}>
-          <Grid item xs={10} direction={'column'} sx={{ display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
+        <Grid container sx={{ paddingTop: 10, alignItems: 'center', alignContent: 'center', paddingLeft: {xs:1, sm:34} }}>
+          <Grid item xs={12} direction={'column'} sx={{ display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
             <Typography>Number of Users and Books</Typography>
             <Statistics />
           </Grid>
@@ -56,8 +56,8 @@ export const AdminDashboard = () => {
 
       
       {currentPage === 3 && (
-        <Grid container sx={{ paddingTop: 10, alignItems: 'center', alignContent: 'center', paddingLeft: 32 }}>
-          <Grid item xs={10} direction={'column'}>
+        <Grid container sx={{ paddingTop: 10, alignItems: 'center', alignContent: 'center', paddingLeft: {xs:1, sm:34} }}>
+          <Grid item xs={12} direction={'column'}>
           <Typography sx={{pl:8}}>Number of Books in each Category</Typography>
           <BookTypesChart data={counts} />
           </Grid>
@@ -66,8 +66,8 @@ export const AdminDashboard = () => {
 
     
       {currentPage === 4 && (
-        <Grid container sx={{ paddingTop: 10, alignItems: 'center', alignContent: 'center', paddingLeft: 32 }}>
-          <Grid item xs={10} direction={'column'}>
+        <Grid container sx={{ paddingTop: 10, alignItems: 'center', alignContent: 'center', paddingLeft: {xs:1, sm:34} }}>
+          <Grid item xs={12} direction={'column'}>
           <Typography sx={{pl:8}}>Earnings Per Book Category</Typography>
           <Earnings />
           </Grid>
@@ -75,7 +75,7 @@ export const AdminDashboard = () => {
       )}
 
       {/* Next and Previous Buttons */}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', paddingTop: 4, paddingLeft: 32, paddingRight: 5 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', paddingTop: 4, paddingLeft: {xs:1, sm:34}, paddingRight: 5 }}>
         <Button variant="contained" onClick={handlePreviousPage} disabled={currentPage === 1}>
           Previous
         </Button>
