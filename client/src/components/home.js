@@ -42,7 +42,7 @@ export const Home = () => {
                 alignItems: 'center', 
                 paddingTop: 12, 
                 pl: { xs: '1%', sm: '10%' },
-                background: 'linear-gradient(to bottom, #FFFFFF, #F5D58E, #FFFFFF)',
+                background: 'linear-gradient(to bottom, #9FE2BF, #CCCCFF, #9FE2BF)',
             }}
         >
             {/* Typography Row */}
