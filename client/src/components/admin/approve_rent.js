@@ -76,7 +76,7 @@ export const ApproveRent = () => {
                 </Paper>
             </Box>
 
-            <Table sx={{ maxWidth: 0.9, border: 'black' }}>
+            <Table sx={{ maxWidth: 'auto', border: 'black' }}>
                 <TableHead>
                 <TableRow sx={{ bgcolor: 'blue' }}>
                         <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>No</TableCell>

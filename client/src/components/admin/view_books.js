@@ -58,7 +58,7 @@ export const ViewBooks = () => {
             </Box>
 
             {books.length !== 0 ? (
-                <Table sx={{ minWidth:'100%', border: 'black' }}>
+                <Table sx={{ maxWidth:'auto', border: 'black' }}>
                     <TableHead sx={{ alignContent: 'center' }}>
                         <TableRow sx={{ bgcolor: 'blue' }}>
                             <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>No</TableCell>
