@@ -38,60 +38,65 @@ export const MainBar = (props) => {
   const drawer = (
     <List sx={{ bgcolor: "#151B54", height: "100%", color: 'white' }}>
       <Stack alignItems="center" padding={2} direction="row" gap={3}>
-        <MenuIcon />
+        <MenuIcon sx={{ fontSize: { xs: '1.5rem', sm: 'default' } }} />
         <Stack direction="row" gap={2}>
-          <Typography variant="h6">Book Rental App</Typography>
+          <Typography 
+            variant="h6"
+            sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}
+            >Book Rental</Typography>
         </Stack>
       </Stack>
-      <Divider />
+      <Divider sx={{borderColor:'white'}}/>
 
               {/* Admin Links */}
-        {userRole === "Admin" && (
-          <>
-        <ListItem  disablePadding sx={{display:"block"}} onClick={() => {navigate("admin/dashboard")}}>
-            <ListItemButton>
-              <ListItemIcon sx={{color:'white'}}>
-                <SpaceDashboardIcon/>
-              </ListItemIcon>
-              <ListItemText primary= "Dashboard" />
-            </ListItemButton>
-          </ListItem>
+      {userRole === "Admin" && (
+      <>
+        <ListItem disablePadding sx={{ display: "block" }} onClick={() => { navigate("admin/dashboard") }}>
+          <ListItemButton>
+            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+              <SpaceDashboardIcon fontSize="inherit" />
+            </ListItemIcon>
+            <ListItemText primary="Dashboard" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }} />
+          </ListItemButton>
+        </ListItem>
 
-          <ListItem  disablePadding  onClick={() => {navigate("admin/books")}}>
-            <ListItemButton>
-              <ListItemIcon sx={{color:'white'}}>
-                <MenuBook/>
-              </ListItemIcon>
-              <ListItemText primary= "Books" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem  disablePadding  onClick={() => {navigate("admin/users")}}>
-            <ListItemButton>
-              <ListItemIcon sx={{color:'white'}}>
-                <Groups2OutlinedIcon/>
-              </ListItemIcon>
-              <ListItemText primary= "Users" />
-            </ListItemButton>
-          </ListItem>
+        <ListItem disablePadding onClick={() => { navigate("admin/books") }}>
+          <ListItemButton>
+            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+              <MenuBook fontSize="inherit" />
+            </ListItemIcon>
+            <ListItemText primary="Books" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }} />
+          </ListItemButton>
+        </ListItem>
 
-          <ListItem  disablePadding  onClick={() => {navigate("admin/approve/books")}}>
-            <ListItemButton>
-              <ListItemIcon sx={{color:'white'}}>
-                <PermIdentityIcon/>
-              </ListItemIcon>
-              <ListItemText primary= "Owner Requests" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem  disablePadding  onClick={() => {navigate("admin/renters")}}>
-            <ListItemButton>
-              <ListItemIcon sx={{color:'white'}}>
-                <PeopleOutlineIcon/>
-              </ListItemIcon>
-              <ListItemText primary= "Renter Requests" />
-            </ListItemButton>
-          </ListItem>
-          </>
-        )}
+        <ListItem disablePadding onClick={() => { navigate("admin/users") }}>
+          <ListItemButton>
+            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+              <Groups2OutlinedIcon fontSize="inherit" />
+            </ListItemIcon>
+            <ListItemText primary="Users" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }} />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding onClick={() => { navigate("admin/approve/books") }}>
+          <ListItemButton>
+            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+              <PermIdentityIcon fontSize="inherit" />
+            </ListItemIcon>
+            <ListItemText primary="Owner Requests" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }} />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding onClick={() => { navigate("admin/renters") }}>
+          <ListItemButton>
+            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+              <PeopleOutlineIcon fontSize="inherit" />
+            </ListItemIcon>
+            <ListItemText primary="Renter Requests" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }} />
+          </ListItemButton>
+        </ListItem>
+      </>
+    )}
 
 
         {/* Owner Links */}
@@ -99,28 +104,28 @@ export const MainBar = (props) => {
           <>
         <ListItem disablePadding sx={{ display: "block" }} onClick={() => { navigate("owner/dashboard") }}>
         <ListItemButton >
-          <ListItemIcon sx={{ color: 'white' }}>
-            <SpaceDashboardIcon />
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+            <SpaceDashboardIcon fontSize="inherit"/>
           </ListItemIcon>
-          <ListItemText primary="Dashboard" />
+          <ListItemText primary="Dashboard" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }}/>
         </ListItemButton>
       </ListItem>
 
       <ListItem disablePadding onClick={() => { navigate("owner/bookupload") }}>
         <ListItemButton>
-          <ListItemIcon sx={{ color: 'white' }}>
-            <UploadFileIcon />
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+            <UploadFileIcon fontSize="inherit"/>
           </ListItemIcon>
-          <ListItemText primary="Book Upload" />
+          <ListItemText primary="Book Upload" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }}/>
         </ListItemButton>
       </ListItem>
 
       <ListItem disablePadding onClick={() => { navigate("owner/viewbooks") }}>
         <ListItemButton>
-          <ListItemIcon sx={{ color: 'white' }}>
-            <MenuBook/>
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+            <MenuBook fontSize="inherit"/>
           </ListItemIcon>
-          <ListItemText primary="Books" />
+          <ListItemText primary="Books" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }}/>
         </ListItemButton>
       </ListItem>
 
@@ -132,58 +137,59 @@ export const MainBar = (props) => {
           <>
           <ListItem  disablePadding onClick={() => { navigate("renter/dashboard") }}>
             <ListItemButton >
-              <ListItemIcon sx={{color:'white'}}>
-                <SpaceDashboardIcon/>
+              <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+                <SpaceDashboardIcon fontSize="inherit"/>
               </ListItemIcon>
-              <ListItemText primary= "Dashboard" />
+              <ListItemText primary= "Dashboard" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }}/>
             </ListItemButton>
           </ListItem>
 
           <ListItem  disablePadding onClick={() => { navigate("renter/books") }}>
             <ListItemButton >
-                <ListItemIcon sx={{color:'white'}}>
-                  <MenuBook/>
+                <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+                  <MenuBook fontSize="inherit"/>
                 </ListItemIcon>
-            <ListItemText primary= "Books" />
+            <ListItemText primary= "Books" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }}/>
           </ListItemButton>
           </ListItem>
 
           <ListItem  disablePadding onClick={() => { navigate("renter/rents") }}>
             <ListItemButton >
-                <ListItemIcon sx={{color:'white'}}>
-                  <MenuBook/>
+                <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+                  <MenuBook fontSize="inherit"/>
                 </ListItemIcon>
-            <ListItemText primary= "Rents" />
+            <ListItemText primary= "Rents" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }}/>
           </ListItemButton>
           </ListItem>
           </>
         )}
 
-      <Divider sx={{ color: 'white'}} />
+      <Divider sx={{ borderColor: 'white' }} />
+
       <ListItem disablePadding onClick={() => navigate('/contact')}>
         <ListItemButton>
-          <ListItemIcon sx={{ color: 'white' }}>
-            <ContactPageIcon />
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+            <ContactPageIcon fontSize="inherit"/>
           </ListItemIcon>
-          <ListItemText primary="Contact" />
+          <ListItemText primary="Contact" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }}/>
         </ListItemButton>
       </ListItem>
       
       <ListItem disablePadding onClick={() => navigate('/about')}>
         <ListItemButton>
-          <ListItemIcon sx={{ color: 'white' }}>
-            <InfoIcon />
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+            <InfoIcon fontSize="inherit"/>
           </ListItemIcon>
-          <ListItemText primary="About" />
+          <ListItemText primary="About" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }}/>
         </ListItemButton>
       </ListItem>
 
       <ListItem disablePadding>
         <ListItemButton>
-          <ListItemIcon sx={{ color: 'white' }}>
-            <RuleFolderIcon />
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem', sm: 'default' } }}>
+            <RuleFolderIcon fontSize="inherit"/>
           </ListItemIcon>
-          <ListItemText primary="Regulations" />
+          <ListItemText primary="Regulations" sx={{ fontSize: { xs: '0.8rem', sm: 'default' } }}/>
         </ListItemButton>
       </ListItem>
     </List>
@@ -225,7 +231,7 @@ export const MainBar = (props) => {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 180 },
           }}
         >
           {drawer}
