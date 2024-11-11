@@ -118,7 +118,7 @@ export const Signup = () => {
 
   return (
     <Box component={'form'} onSubmit={handleSubmit}>
-      <Grid container sx={{ paddingTop: 10, width: '80%', paddingLeft: 35 }}>
+      <Grid container sx={{ paddingTop: 10, width: {xs:'98%', sm:'60%'}, paddingLeft: {xs:0, sm:34} }}>
         <Box
             sx={{
               marginLeft: 1,
@@ -273,7 +273,8 @@ export const Signup = () => {
                   display: 'flex',                  // Set the Box as a flex container
                   justifyContent: 'center',          // Centers the button horizontally
                   alignItems: 'center',              // Centers the button vertically (optional)
-                  width: '100%',                     // Ensure it takes full width if needed
+                  width: '100%',      
+                  marginTop:1,               
                 }}
               >
                 <Button
