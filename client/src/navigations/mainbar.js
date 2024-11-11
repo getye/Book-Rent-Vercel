@@ -32,22 +32,32 @@ const drawerWidth = 240;
 export const MainBar = (props) => {
   const userRole = localStorage.getItem('userRole');
   const navigate = useNavigate();
+  const [close, setClose] = React.useState(false)
   const { window } = props;
 
-
+  const drawerHandle = () =>{
+    setClose(!close)
+  }
+  
   const drawer = (
     <List sx={{ bgcolor: "#151B54", height: "100%", color: 'white' }}>
-      <Stack alignItems="center" padding={2} direction="row" gap={3}>
-        <MenuIcon sx={{ fontSize: { xs: '1.5rem', sm: 'default' } }} />
+      <Stack alignItems="center" padding={2} direction="row" gap={2}>
+        <MenuIcon 
+          sx={{ fontSize: { xs: '1.5rem' } }} 
+          onClick={drawerHandle}/>
+        {!close && (
         <Stack direction="row" gap={2}>
           <Typography 
             variant="h6"
             sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}
             >Book Rental</Typography>
         </Stack>
+        )}
       </Stack>
       <Divider sx={{borderColor:'white'}}/>
-
+      
+      {!close && (
+        <>
               {/* Admin Links */}
       {userRole === "Admin" && (
       <>
@@ -192,8 +202,11 @@ export const MainBar = (props) => {
           <ListItemText primary="Regulations" sx={{ fontSize: { xs: '0.8rem'} }}/>
         </ListItemButton>
       </ListItem>
+      </>
+      )}
     </List>
   );
+
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
@@ -203,6 +216,7 @@ export const MainBar = (props) => {
       <AppBar position="fixed" gap={2} sx={{alignItems:'end', color: "white", 
                                             width: 1, bgcolor: '#151B54' }}>
         <Toolbar>
+          
           <MenuItem onClick={() => navigate('/')}>Home</MenuItem>
           {(!userRole) ? (
               <>
@@ -224,25 +238,33 @@ export const MainBar = (props) => {
 
       <Box component="nav" sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }} aria-label="mailbox folders">
         <Drawer
-          container={container}
-          variant="temporary"
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 180 },
-          }}
+           container={container}
+           variant="persistent"
+           open
+           sx={{
+            width: close ? '25px' : '180px', 
+            height:'auto', 
+            display: { xs:'block', sm:'none'},
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: close ? '25px' : '180px',
+              height:'auto'
+            },
+           }}
         >
           {drawer}
         </Drawer>
         <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
+          variant="persistent"
           open
+          sx={{
+            width: close ? '60px' : 240,  
+            display: { xs:'none', sm:'block'},
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: close ? '60px' : 240,
+            },
+          }}
         >
           {drawer}
         </Drawer>
