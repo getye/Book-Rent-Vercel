@@ -66,7 +66,7 @@ export const MainBar = (props) => {
       <>
         <ListItem disablePadding sx={{ display: "block" }} onClick={() => { navigate("admin/dashboard") }}>
           <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{ xs: 0.25, sm: 0.5 }}}} >
-            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
               <SpaceDashboardIcon fontSize="inherit" />
             </ListItemIcon>
             <ListItemText primary="Dashboard" sx={{ fontSize: { xs: '0.8rem' } }} />
@@ -75,7 +75,7 @@ export const MainBar = (props) => {
 
         <ListItem disablePadding onClick={() => { navigate("admin/books") }}>
           <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
               <MenuBook fontSize="inherit" />
             </ListItemIcon>
             <ListItemText primary="Books" sx={{ fontSize: { xs: '0.8rem' } }} />
@@ -84,7 +84,7 @@ export const MainBar = (props) => {
 
         <ListItem disablePadding onClick={() => { navigate("admin/users") }}>
           <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
               <Groups2OutlinedIcon fontSize="inherit" />
             </ListItemIcon>
             <ListItemText primary="Users" sx={{ fontSize: { xs: '0.8rem' } }} />
@@ -93,7 +93,7 @@ export const MainBar = (props) => {
 
         <ListItem disablePadding onClick={() => { navigate("admin/approve/books") }}>
           <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem'} }}>
+            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem'} }}>
               <PermIdentityIcon fontSize="inherit" />
             </ListItemIcon>
             <ListItemText primary="Owner Requests" sx={{ fontSize: { xs: '0.8rem' } }} />
@@ -102,7 +102,7 @@ export const MainBar = (props) => {
 
         <ListItem disablePadding onClick={() => { navigate("admin/renters") }}>
           <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem'} }}>
+            <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem'} }}>
               <PeopleOutlineIcon fontSize="inherit" />
             </ListItemIcon>
             <ListItemText primary="Renter Requests" sx={{ fontSize: { xs: '0.8rem' } }} />
@@ -117,7 +117,7 @@ export const MainBar = (props) => {
           <>
         <ListItem disablePadding sx={{ display: "block" }} onClick={() => { navigate("owner/dashboard") }}>
         <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem'} }}>
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem'} }}>
             <SpaceDashboardIcon fontSize="inherit"/>
           </ListItemIcon>
           <ListItemText primary="Dashboard" sx={{ fontSize: { xs: '0.8rem' } }}/>
@@ -126,7 +126,7 @@ export const MainBar = (props) => {
 
       <ListItem disablePadding onClick={() => { navigate("owner/bookupload") }}>
         <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
             <UploadFileIcon fontSize="inherit"/>
           </ListItemIcon>
           <ListItemText primary="Book Upload" sx={{ fontSize: { xs: '0.8rem'} }}/>
@@ -135,7 +135,7 @@ export const MainBar = (props) => {
 
       <ListItem disablePadding onClick={() => { navigate("owner/viewbooks") }}>
         <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
             <MenuBook fontSize="inherit"/>
           </ListItemIcon>
           <ListItemText primary="Books" sx={{ fontSize: { xs: '0.8rem' } }}/>
@@ -150,7 +150,7 @@ export const MainBar = (props) => {
           <>
           <ListItem  disablePadding onClick={() => { navigate("renter/dashboard") }}>
             <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-              <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+              <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
                 <SpaceDashboardIcon fontSize="inherit"/>
               </ListItemIcon>
               <ListItemText primary= "Dashboard" sx={{ fontSize: { xs: '0.8rem' } }}/>
@@ -159,7 +159,7 @@ export const MainBar = (props) => {
 
           <ListItem  disablePadding onClick={() => { navigate("renter/books") }}>
             <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-                <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+                <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
                   <MenuBook fontSize="inherit"/>
                 </ListItemIcon>
             <ListItemText primary= "Books" sx={{ fontSize: { xs: '0.8rem' } }}/>
@@ -168,7 +168,7 @@ export const MainBar = (props) => {
 
           <ListItem  disablePadding onClick={() => { navigate("renter/rents") }}>
             <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-                <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+                <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
                   <MenuBook fontSize="inherit"/>
                 </ListItemIcon>
             <ListItemText primary= "Rents" sx={{ fontSize: { xs: '0.8rem' } }}/>
@@ -181,7 +181,7 @@ export const MainBar = (props) => {
 
       <ListItem disablePadding onClick={() => navigate('/contact')}>
         <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
             <ContactPageIcon fontSize="inherit"/>
           </ListItemIcon>
           <ListItemText primary="Contact" sx={{ fontSize: { xs: '0.8rem' } }}/>
@@ -190,7 +190,7 @@ export const MainBar = (props) => {
       
       <ListItem disablePadding onClick={() => navigate('/about')}>
         <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
             <InfoIcon fontSize="inherit"/>
           </ListItemIcon>
           <ListItemText primary="About" sx={{ fontSize: { xs: '0.8rem' } }}/>
@@ -199,7 +199,7 @@ export const MainBar = (props) => {
 
       <ListItem disablePadding>
         <ListItemButton sx={{paddingLeft:{xs:1, sm:2, gap:{xs:1, sm:2}}}} >
-          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.2rem' } }}>
+          <ListItemIcon sx={{ color: 'white', fontSize: { xs: '1.4rem' } }}>
             <RuleFolderIcon fontSize="inherit"/>
           </ListItemIcon>
           <ListItemText primary="Regulations" sx={{ fontSize: { xs: '0.8rem'} }}/>
