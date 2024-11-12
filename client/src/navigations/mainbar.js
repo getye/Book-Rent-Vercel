@@ -34,16 +34,14 @@ const theme = createTheme();
 export const MainBar = (props) => {
   const userRole = localStorage.getItem('userRole');
   const navigate = useNavigate();
-  const [close, setClose] = React.useState(false)
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+  const [close, setClose] = React.useState(isMobile)
   const { window } = props;
 
-  if(isMobile){
-    setClose(true)
-  }
+
 
   const drawerHandle = () =>{
-    setClose(!close)
+    setClose((prevClose) => !prevClose);
   }
   
   const drawer = (
