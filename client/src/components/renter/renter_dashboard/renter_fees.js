@@ -17,7 +17,7 @@ export const RenterFees = () => {
 
   return (
     <ResponsiveContainer width="100%" height={400}>
-      <LineChart data={fees} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+      <LineChart data={fees}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="period" />
         <YAxis />
