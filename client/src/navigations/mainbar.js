@@ -245,12 +245,12 @@ export const MainBar = (props) => {
            variant="persistent"
            open
            sx={{
-            width: close ? '40px' : '210px', 
+            width: close ? '50px' : '210px', 
             height:'auto', 
             display: { xs:'block', sm:'none'},
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
-              width: close ? '40px' : '210px',
+              width: close ? '50px' : '210px',
               height:'auto'
             },
            }}
