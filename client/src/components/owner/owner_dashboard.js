@@ -15,8 +15,12 @@ export const OwnerDashboard = () => {
   };
 
   return (
-    <Box sx={{ paddingTop: 10, alignItems: "center", alignContent: "center", paddingLeft: 32, paddingRight:8 }}>
-      <Grid container direction={"row"} >
+    <Box sx={{ paddingTop: 10, alignItems: "center", alignContent: "center", paddingLeft: {xs:1, sm:10, md:20, lg:32}}}>
+      <Grid 
+        container 
+        direction={"row"} 
+        sx={{width:{xs:'100%', sm:'80%', md:'60%'},}}
+        >
         {currentSection === 0 ? <OwnerEarnings /> : <OwnerBookStatus />}
       </Grid>
 
@@ -25,7 +29,6 @@ export const OwnerDashboard = () => {
           variant="contained"
           onClick={handlePrevious}
           disabled={currentSection === 0}
-          sx={{ marginRight: 2 }}
         >
           Previous
         </Button>

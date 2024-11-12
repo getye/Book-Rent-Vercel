@@ -111,11 +111,11 @@ export const OwnerBookUpload = () => {
           },
         }}
       >
-        <Typography variant="h5" gutterBottom pb={1}>
+        <Typography variant="h5" gutterBottom pb={1} sx={{ textAlign: 'center' }}>
           Add a New Book
         </Typography>
         <Grid container spacing={2}>
-          <Grid item xs ={12} sm={5.6}>
+          <Grid item xs ={12} sm={6}>
             <TextField
                 label="Book Title"
                 name="bookTitle"
@@ -148,7 +148,7 @@ export const OwnerBookUpload = () => {
               />
           </Grid>
           <Divider orientation="vertical" flexItem sx={{ ml: 2 }} />
-          <Grid item xs={12} sm={5.6}>
+          <Grid item xs={12} sm={6}>
             <TextField
                 label="Book Quantity"
                 type="number"
@@ -206,9 +206,32 @@ export const OwnerBookUpload = () => {
             </Box>
           </Grid>
         </Grid>
-        <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
-          Submit
-        </Button>
+        <Box
+            sx={{
+              display: 'flex',                  // Set the Box as a flex container
+              justifyContent: 'center',          // Centers the button horizontally
+              alignItems: 'center',              // Centers the button vertically (optional)
+              width: '100%',                     // Ensure it takes full width if needed
+            }}
+          >
+            <Button
+              type="submit"
+              sx={{
+                bgcolor: '#1974D2',
+                paddingLeft: 3,
+                paddingRight: 3,
+                borderRadius: 1,
+                color: 'white',
+                textTransform: 'none',
+                '&:hover': {
+                  bgcolor: '#1974D2',
+                  opacity: 0.9,
+                },
+              }}
+            >
+              Submit
+            </Button>
+          </Box>
       </Box>
 
       {/* Snackbar for notifications */}
