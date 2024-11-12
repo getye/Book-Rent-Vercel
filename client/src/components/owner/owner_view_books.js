@@ -28,7 +28,7 @@ export const OwnerViewBooks = () => {
         );
     if (loading) return <div>Loading...</div>;
     return ( 
-      <Box sx={{ paddingTop: 10, marginLeft: { xs: '1%', sm: '5%', md: '12%', lg: '20%' }, justifyContent:'center' }}>
+      <Box sx={{ paddingTop: 10, marginLeft: { xs: '1%', sm: '5%', md: '12%', lg: '20%' } }}>
         <Box sx={{ paddingTop:2}}>
               <Paper 
                 sx={{ 
@@ -43,7 +43,7 @@ export const OwnerViewBooks = () => {
                     <SearchIcon />
                   </IconButton>
                   <InputBase
-                      sx={{ ml: 1, flex: 1 }}
+                      sx={{flex: 1 }}
                       size='small'
                       placeholder="Search"
                       value={search} // Bind the search query
@@ -53,7 +53,7 @@ export const OwnerViewBooks = () => {
         </Box>
         
         { (books.length !== 0) ? (
-          <Table sx={{ maxWidth: 0.95, border: 'black'}}>
+          <Table sx={{ maxWidth: '100%', border: 'black'}}>
           <TableHead sx={{alignContent:'center'}}>
             <TableRow sx={{ bgcolor: 'blue'}}>
               <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>

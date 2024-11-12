@@ -15,7 +15,7 @@ export const OwnerDashboard = () => {
   };
 
   return (
-    <Box sx={{ paddingTop: 10, alignItems: "center", alignContent: "center", paddingLeft: {xs:1, sm:10, md:20, lg:32}}}>
+    <Box sx={{ paddingTop: 10, paddingLeft: {xs:1, sm:10, md:20, lg:32}}}>
       <Grid 
         container 
         direction={"row"} 

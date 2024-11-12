@@ -22,7 +22,7 @@ export const OwnerBookStatus = () => {
 
   return (
     <ResponsiveContainer width="100%" height={400}>
-      <BarChart data={dataWithUnrentedQuantity} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+      <BarChart data={dataWithUnrentedQuantity}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="category" />
         <YAxis />
