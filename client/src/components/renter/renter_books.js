@@ -54,12 +54,12 @@ import { BookDetailsModal } from './renter_rent_book';
       if (error) return <div>Error: {error}</div>;
     
       return ( 
-        <Box sx={{ paddingTop: "5%", marginLeft: "20%", justifyContent: 'center' }}>
+        <Box sx={{ paddingTop: 9, paddingLeft: {xs:1, sm:10, md:20, lg:32} , justifyContent: 'center' }}>
           <Box sx={{ paddingTop: 2 }}>
             <Paper 
               sx={{ 
                 display: 'flex', 
-                width: "45%", 
+                width: { xs: '100%', sm: '80%', md: '50%' },
                 border: 1, 
                 height: '1%',
                 borderRadius: 4, 
@@ -78,7 +78,7 @@ import { BookDetailsModal } from './renter_rent_book';
               />
             </Paper>
           </Box>
-          <Table sx={{ maxWidth: 0.9, border: 'black' }}>
+          <Table sx={{ maxWidth: 'auto', border: 'black' }}>
             <TableHead sx={{ alignContent: 'center' }}>
               <TableRow sx={{ bgcolor: 'blue' }}>
                 <TableCell sx={{ padding: '5px', color: 'white', textAlign: 'center' }}>No</TableCell>

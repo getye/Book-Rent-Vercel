@@ -209,6 +209,7 @@ export const OwnerBookUpload = () => {
         <Box
             sx={{
               display: 'flex',                  // Set the Box as a flex container
+              marginTop:1,
               justifyContent: 'center',          // Centers the button horizontally
               alignItems: 'center',              // Centers the button vertically (optional)
               width: '100%',                     // Ensure it takes full width if needed

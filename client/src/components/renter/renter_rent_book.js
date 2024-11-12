@@ -52,13 +52,13 @@ export const BookDetailsModal = ({ open, handleClose, selectedBook }) => {
             <>
               <Typography variant="h5">{selectedBook.book_title}</Typography>
               <Grid container spacing={2}>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                   <Typography sx={{ mt: 2 }}><strong>Category:</strong> {selectedBook.catagory}</Typography>
                   <Typography sx={{ mt: 2 }}><strong>Owner:</strong> {selectedBook.book_owner}</Typography>
                   <Typography sx={{ mt: 2 }}><strong>Author:</strong> {selectedBook.author}</Typography>
                   <Typography sx={{ mt: 2 }}><strong>Price:</strong> {selectedBook.price} ETB/day</Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                 <img
                       src={selectedBook.book_cover}
                       alt="Book Cover"
@@ -66,7 +66,7 @@ export const BookDetailsModal = ({ open, handleClose, selectedBook }) => {
                       />
                 </Grid>
               </Grid>
-              <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1, paddingRight:9}}>
+              <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1, paddingRight:{xs:1, sm:9}}}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3 }}>
                   <TextField
                       type="date"
@@ -99,7 +99,21 @@ export const BookDetailsModal = ({ open, handleClose, selectedBook }) => {
                     />
                 </Box>
                   <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
-                    <Button type="submit" variant="contained" color="primary" sx={{ mt: 2, display: "block" }}>
+                    <Button
+                        type="submit"
+                        sx={{
+                          bgcolor: '#1974D2',
+                          paddingLeft: 3,
+                          paddingRight: 3,
+                          borderRadius: 1,
+                          color: 'white',
+                          textTransform: 'none',
+                          '&:hover': {
+                            bgcolor: '#1974D2',
+                            opacity: 0.9,
+                          },
+                        }}
+                      >
                       Submit
                     </Button>
                   </Box>
