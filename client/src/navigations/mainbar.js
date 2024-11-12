@@ -38,6 +38,10 @@ export const MainBar = (props) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
   const { window } = props;
 
+  if(isMobile){
+    setClose(true)
+  }
+
   const drawerHandle = () =>{
     setClose(!close)
   }

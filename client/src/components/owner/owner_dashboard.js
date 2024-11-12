@@ -24,7 +24,11 @@ export const OwnerDashboard = () => {
         {currentSection === 0 ? <OwnerEarnings /> : <OwnerBookStatus />}
       </Grid>
 
-      <Box display="flex" justifyContent="space-between" sx={{ marginTop: 2 }}>
+      <Box 
+        display="flex" 
+        justifyContent="space-between" 
+        sx={{width:{xs:'100%', sm:'80%', md:'60%'}, marginTop: 2}}
+        >
         <Button
           variant="contained"
           onClick={handlePrevious}
