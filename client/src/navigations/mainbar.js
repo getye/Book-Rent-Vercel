@@ -57,10 +57,10 @@ export const MainBar = (props) => {
         </Stack>
         )}
       </Stack>
-      <Divider sx={{borderColor:'white'}}/>
       
       {!close && (
         <>
+        <Divider sx={{borderColor:'white'}}/>
               {/* Admin Links */}
       {userRole === "Admin" && (
       <>
