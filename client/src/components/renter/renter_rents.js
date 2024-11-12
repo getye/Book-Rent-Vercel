@@ -38,12 +38,12 @@ export const RenterRents = () => {
 
 
     return ( 
-      <Box sx={{ paddingTop: "5%", marginLeft: "20%", justifyContent:'center' }}>
+      <Box sx={{ paddingTop: 9, marginLeft: { xs: '1%', sm: '5%', md: '12%', lg: '20%' }, justifyContent:'center' }}>
         <Box sx={{ paddingTop:2}}>
               <Paper 
                 sx={{ 
                     display: 'flex', 
-                    width: "45%", 
+                    width: { xs: '100%', sm: '80%', md: '50%' },
                     border: 1, 
                     height:'1%',
                     borderRadius: 4, 
