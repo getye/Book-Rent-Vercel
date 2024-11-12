@@ -2,6 +2,10 @@
 
 This application allows Book Owners to register, manage their books, and view rental information. Renters can browse available books, place rental orders, and check their rental details. An Admin oversees all activities, including the registration of book owners and renters. The app also tracks earnings from book rentals, displays statistics for books, and calculates total revenue.
 
+This application is Deployed on cloud hostting platform. You can access the application here.
+
+[Go to the App](https://getye-book-rent.vercel.app/) 
+
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
@@ -61,3 +65,8 @@ This application allows Book Owners to register, manage their books, and view re
 - **Material UI**: Component library for a modern, responsive UI.
 - **Redux**: State management tool for managing app-wide state.
 - **Redux Saga**: Used for API calling.
+
+### Deployment
+- **Frontend**: Deployed on Vercel.
+- **Backend**: Hosted on Railway.
+- **Media**: Cloudinary is used for storing images.
